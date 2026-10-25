@@ -1,6 +1,6 @@
 # AetherMedia public-build checkpoint
 
-Version 0.3.5 (8), October 25, 2026. Prepared from the existing app snapshot with a fresh repository history. No compiled 0.3.5 IPA or successful live playback is yet confirmed.
+Version 0.3.5 (8), October 25, 2026. Prepared from the existing app snapshot with a fresh repository history. The unsigned 0.3.5 device IPA has compiled, passed automated tests, and passed device-binary inspection. Live-account and physical-iPhone playback are not yet confirmed.
 
 ## Current work
 
@@ -8,13 +8,17 @@ The owner authorized publishing only AetherMedia in a separate public repository
 
 Publication is complete. Source commit `7eaffd7c30fc52ed070b2b35da508440c494aee1` contains87 reviewed app-only files and has only the new repository's initial README commit as its parent. Public source/test blob hashes and paths were verified. No private ancestor commits or other project files were transferred.
 
-The public Mac build started successfully: https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40234556260, job121293224954. Credential checks,82 packaging checks and portable core tests have passed; iOS simulator tests and device archiving are in progress. Exact test counts and the compiled IPA remain pending completed logs. The previous private-repository launch restriction did not block this public standard runner. The live workflow has not been triggered, and no new Real-Debrid code exists yet.
+The public Mac build passed: https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40234556260, job121293224954, source7eaffd7c30fc52ed070b2b35da508440c494aee1. Actual results:87 core tests,100 active iOS tests plus2 explicit live skips (102 total), zero failures;82 packaging checks; real MKV/AAC and MKV/DTS video-output/time tests; arm64 device archive. Toolchain: Xcode16.4 / Swift6.1.2.
+
+Inspected AetherMedia-0.3.5-unsigned.ipa:20112346 bytes, SHA256049b90c83b4f0c772a7b73453551c15bccfd9260a24db75b39e51a44543a7632. Bundle com.kellen.aethermedia, version0.3.5/build8, iOS17+, devicearm64. Embedded VLCKit device binary and LGPL notices verified. Unsigned/no embedded profile; SideStore signs it. Device IPA artifact12614558069; artifact ZIP SHA2565d0def3670f280d93addd04e5c61bdde9c31f6c7931a7712cd3670d768a11c75. See AetherMedia/verification/RESULTS.json and cloud-device-ipa-0.3.5.json.
+
+The live request is now explicitly being submitted in this public repository after the ordinary build and IPA inspection passed. Obtain a fresh code from its sign-in artifact, provide it to the owner promptly, and await normal approval. Do not reuse previous codes or claim real playback passed before the live report confirms it.
 
 ## 0.3.5 behavior and validation
 
 The real account test observed public addMagnet201 followed by first-info404/code7. Delayed visibility is a hypothesis to test, not a proven server cause. `getNewTorrentInfo` now retries the same newly created ID at most six times (also capped by preparation attempts), only for exact HTTP404/service7. It preserves cancellation and account checks, never submits a second magnet, and keeps hash/file validation and existing cloud selections intact. Persistent404 and other refusals retain typed errors.
 
-Five new regression cases cover startup recovery, bounded persistent404, ordinary stale detail behavior, other refusals and malformed identity. Expected test totals are 87 core, 100 active iOS, and 2 opt-in live skips; actual results must replace these expectations after CI runs. Source inventory is 43 app Swift files and 15 test Swift files.
+Five new regression cases cover startup recovery, bounded persistent404, ordinary stale detail behavior, other refusals and malformed identity. Actual passed test totals are87 core and100 active iOS, with2 opt-in live skips. Source inventory is 43 app Swift files and 15 test Swift files.
 
 The earlier compiled app's empty204 cloud-list repair and actual MKV/AAC and MKV/DTS decoding tests passed. Live OAuth, Premium profile, empty204 cloud handling and public torrent creation were verified, but network playback was not reached. An independent HTTP451/code35 source refusal is not solved by retries.
 

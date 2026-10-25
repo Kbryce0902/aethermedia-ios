@@ -1,0 +1,22 @@
+{
+  "version": "0.3.5",
+  "bundle_version": "8",
+  "bundle_identifier": "com.kellen.aethermedia",
+  "size_bytes": 20112346,
+  "sha256": "049b90c83b4f0c772a7b73453551c15bccfd9260a24db75b39e51a44543a7632",
+  "cpu": "arm64",
+  "mach_o_platform": "iOS device",
+  "minimum_ios": "17.0",
+  "archive_crc": "passed",
+  "device_binary_validation": "passed",
+  "vlckit_framework_embedded": true,
+  "vlckit_device_arm64": true,
+  "vlckit_sha256": "456334664f2ed1964d563747d2c868169c2a6bf4fbb2e28ed1dfaba2e8bb34e9",
+  "third_party_notices_bundled": true,
+  "has_code_signature_load_command": false,
+  "has_embedded_profile": false,
+  "signing_status": "Unsigned; requires SideStore re-signing",
+  "source_commit": "7eaffd7c30fc52ed070b2b35da508440c494aee1",
+  "github_run": "https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40234556260",
+  "physical_device_playback": "Not yet tested on physical iPhone for 0.3.5; prior real cloud204 and add201 passed, first detail404/code7 interrupted playback; bounded startup inspection retest pending"
+}

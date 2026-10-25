@@ -1,0 +1,31 @@
+{
+  "version": "0.3.5",
+  "build": "8",
+  "source_commit": "7eaffd7c30fc52ed070b2b35da508440c494aee1",
+  "github_run": "https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40234556260",
+  "job": 121293224954,
+  "toolchain": "Xcode16.4 / Swift6.1.2",
+  "credential_snapshot_scan": "passed,87 files,zero findings",
+  "offline_packaging_checks": 82,
+  "core_tests": 87,
+  "core_failures": 0,
+  "ios_active_tests": 100,
+  "ios_skipped_live_methods": 2,
+  "ios_total_tests": 102,
+  "ios_failures": 0,
+  "real_decoder_tests": [
+    "MKV/AAC video output and time advancing passed",
+    "MKV/DTS video output and time advancing passed"
+  ],
+  "device_archive": "passed,arm64 iOS17+",
+  "ipa_bytes": 20112346,
+  "ipa_sha256": "049b90c83b4f0c772a7b73453551c15bccfd9260a24db75b39e51a44543a7632",
+  "embedded_vlckit_sha256": "456334664f2ed1964d563747d2c868169c2a6bf4fbb2e28ed1dfaba2e8bb34e9",
+  "device_ipa_artifact": 12614558069,
+  "artifact_zip_sha256": "5d0def3670f280d93addd04e5c61bdde9c31f6c7931a7712cd3670d768a11c75",
+  "signing": "unsigned,SideStore re-signing required",
+  "physical_iPhone_playback": "not yet tested for0.3.5",
+  "live_account_playback": "pending fresh normal owner authorization and actual report",
+  "public_snapshot": "Only reviewed AetherMedia files; fresh public repository history; no other project files/private ancestor commits",
+  "billing_settings_changed": false
+}

@@ -27,7 +27,9 @@ Real-Debrid resolution preserves existing cloud file selections and validates so
 
 ## Current verification
 
-The previous compiled version passed core/iOS tests, device archiving, and actual MKV AAC/DTS decoding tests. A real authorized run verified OAuth, Premium profile decoding, the HTTP 204 cloud-list repair, and public torrent creation. It stopped at HTTP 404/code 7 on the first new-torrent detail read before video playback. The new bounded retry has regression coverage prepared, but 0.3.5 has not yet compiled or passed these tests.
+Version0.3.5 passed87 core tests and100 active iOS tests, plus2 explicitly skipped live methods, with zero failures. Real MKV/AAC and MKV/DTS output/time tests and arm64 device archiving passed. The inspected unsigned IPA contains its device decoder and notices. Build: https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40234556260.
+
+Earlier real authorized runs verified OAuth, Premium profile decoding, the empty204 cloud-list repair and public torrent creation, then stopped before playback at first-info404/code7. The0.3.5 bounded retry passed regression tests; the fresh real-account test is pending owner authorization and actual results.
 
 HTTP 451/code 35 is an explicit refusal for a selected source; startup retries do not override it. Successful physical-iPhone or live-account playback of 0.3.5 is not yet confirmed.
 

@@ -8,4 +8,4 @@ Credential review covers known token/private-key patterns, credential assignment
 
 No account credential was found in the reviewed snapshot. This is a snapshot review, not a guarantee that future edits cannot add sensitive data. Run `python3 AetherMedia/scripts/check_public_snapshot.py` before publishing updates. Ignore rules exclude credentials, build products and private live-test files. Raw private live-test logs are never uploaded.
 
-The review does not establish a successful 0.3.5 compile or playback test. Those remain pending until actual hosted results are inspected.
+This snapshot review is separate from subsequent compile and playback results. The completed0.3.5 automated build and device IPA inspection are recorded in HANDOFF.md and AetherMedia/verification/RESULTS.json. Live-account and physical-iPhone playback remain pending.

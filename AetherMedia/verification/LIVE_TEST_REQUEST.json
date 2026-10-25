@@ -1,0 +1,12 @@
+{
+  "request_id": "2026-10-25-public-0.3.5-live-account",
+  "version": "0.3.5 (8)",
+  "purpose": "Verify bounded first-detail handling and actual public-video playback with the production HTTP client after normal owner device authorization.",
+  "ordinary_build_run": 40234556260,
+  "ordinary_build_result": "passed,87 core/100 active iOS/device archive",
+  "owner_authorized_live_testing": true,
+  "simulated_http_responses": false,
+  "preserve_existing_cloud_entries_and_selections": true,
+  "delete_only_the_new_public_test_entry": true,
+  "publish_only_display_code_and_sanitized_result": true
+}

@@ -33,8 +33,8 @@
     },
     {
       "path": "AetherMedia/INSTALL_IPHONE.md",
-      "bytes": 959,
-      "sha256": "b71c2d156643c646d23215ca5a85b4fa15e88a2d50a9e8b6bd8678f1f847d744"
+      "bytes": 1048,
+      "sha256": "05e96278c7cbdab51ad98bbd87417f3f23eefc56a76f9058d1defb143c8c93fd"
     },
     {
       "path": "AetherMedia/Package.swift",
@@ -43,8 +43,8 @@
     },
     {
       "path": "AetherMedia/README.md",
-      "bytes": 2020,
-      "sha256": "1553be7c7b3a0d268295e796d9d4f75148fd34118192c890b9ab21ffa561979f"
+      "bytes": 2239,
+      "sha256": "980b8e77b61f833a9e8a3b3cf6a2073c680c3faccdf34796ed2654b5958508ba"
     },
     {
       "path": "AetherMedia/Resources/Assets.xcassets/AccentColor.colorset/Contents.json",
@@ -417,19 +417,34 @@
       "sha256": "db63498195f51356367ac5a85d26890c22f360337cfdeda80f50924b9b12f928"
     },
     {
+      "path": "AetherMedia/verification/LIVE_TEST_REQUEST.json",
+      "bytes": 599,
+      "sha256": "c447aaf6c3d548c5d288b4d78f1de59a13ccc69c726e29659648721fa1e69362"
+    },
+    {
+      "path": "AetherMedia/verification/RESULTS.json",
+      "bytes": 1397,
+      "sha256": "9ecc4a815fbde5bd612c7643c7e8fe21d8a01f2c5dc9993acd285e773b9f17a0"
+    },
+    {
+      "path": "AetherMedia/verification/cloud-device-ipa-0.3.5.json",
+      "bytes": 1040,
+      "sha256": "4fe6ba3ab3cebf8ee0617b6ceb57d96c828e1369c5b50dcfe2054b48b5dbafb4"
+    },
+    {
       "path": "HANDOFF.md",
-      "bytes": 3293,
-      "sha256": "703e5ddabe0016b056a9784d8d61971cb04b398017bedbfef9f0a24991b9543f"
+      "bytes": 4589,
+      "sha256": "340e6a5bbdbf3ded4168439d482b6a8b071c56bd35e78d8456f82c561258eb91"
     },
     {
       "path": "PUBLICATION_REVIEW.md",
-      "bytes": 1775,
-      "sha256": "60b52c1329d55a881010168a8356a03fbf00831af445a0f5d32ae15c3a02d0bf"
+      "bytes": 1904,
+      "sha256": "ba0ace583b4f2ce78e48e4fdbe8b6c9b456c559a40793a188bb91bcc93d3bc00"
     },
     {
       "path": "README.md",
-      "bytes": 1647,
-      "sha256": "ced5b1d361f2e5904f2cfa09f92d678f72378fb8983af0980de5fa96407bd72a"
+      "bytes": 1730,
+      "sha256": "c8bb9e4cedfa4118e0070e0dd46f959594ed77d842b928458e41614ca52e53a5"
     }
   ]
 }
