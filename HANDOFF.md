@@ -12,7 +12,7 @@ The public Mac build passed: https://github.com/Kbryce0902/aethermedia-ios/actio
 
 Inspected AetherMedia-0.3.5-unsigned.ipa:20112346 bytes, SHA256049b90c83b4f0c772a7b73453551c15bccfd9260a24db75b39e51a44543a7632. Bundle com.kellen.aethermedia, version0.3.5/build8, iOS17+, devicearm64. Embedded VLCKit device binary and LGPL notices verified. Unsigned/no embedded profile; SideStore signs it. Device IPA artifact12614558069; artifact ZIP SHA2565d0def3670f280d93addd04e5c61bdde9c31f6c7931a7712cd3670d768a11c75. See AetherMedia/verification/RESULTS.json and cloud-device-ipa-0.3.5.json.
 
-The live request is now explicitly being submitted in this public repository after the ordinary build and IPA inspection passed. Obtain a fresh code from its sign-in artifact, provide it to the owner promptly, and await normal approval. Do not reuse previous codes or claim real playback passed before the live report confirms it.
+The authorized live run is https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40235605030, job121296396243, source8b911b989c07bc9721aab86609e91bab26a45a21 (same Swift sources as the passed ordinary build). The public-only guard and credential check passed; its isolated virtual iPhone is building. No fresh code has been observed yet. Obtain its sign-in artifact when uploaded, provide only that fresh normal code promptly, and await owner approval. Do not reuse previous codes or claim real playback passed before the sanitized report confirms it.
 
 ## 0.3.5 behavior and validation
 
