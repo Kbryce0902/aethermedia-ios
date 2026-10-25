@@ -4,7 +4,7 @@ A standalone iOS 17+ media app with a touch interface, Real-Debrid device author
 
 This repository contains only AetherMedia. It starts with a fresh source snapshot and does not include other projects, previous repository history, account data, or old workflow logs.
 
-Version 0.3.6 (build 9) adds a dedicated Red Light browser and native clients for its source services, optional AIOStreams configuration, backend diagnostics and exact episode selection from season packs. See [source coverage](AetherMedia/docs/SOURCE_COVERAGE.md) for supported services and the Kodi runtime boundary. New compilation and test results are pending. The prior 0.3.5 device build and automated tests passed; real-account and physical-iPhone playback remain unconfirmed.
+Version 0.3.6 (build 9) adds a dedicated Red Light browser and native clients for its source services, optional AIOStreams configuration, backend diagnostics and exact episode selection from season packs. See [source coverage](AetherMedia/docs/SOURCE_COVERAGE.md) for supported services and the Kodi runtime boundary. The [public build](https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40242234176),99 active core tests,112 active iOS tests, real public-source discovery and the arm64 archive passed. The unsigned device IPA passed inspection. Real-account and physical-iPhone playback remain unconfirmed.
 
 See [app instructions](AetherMedia/README.md), [installation](AetherMedia/INSTALL_IPHONE.md), [current handoff](HANDOFF.md), and [publication review](PUBLICATION_REVIEW.md).
 

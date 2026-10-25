@@ -1,42 +1,103 @@
 {
-  "version": "0.3.5",
-  "build": "8",
-  "source_commit": "7eaffd7c30fc52ed070b2b35da508440c494aee1",
-  "github_run": "https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40234556260",
-  "job": 121293224954,
+  "version": "0.3.6",
+  "build": "9",
+  "source_commit": "2be86e7d8c53ac1caae9048dc366d655bcdead9d",
+  "github_run": "https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40242234176",
+  "job": 121316295909,
   "toolchain": "Xcode16.4 / Swift6.1.2",
-  "credential_snapshot_scan": "passed,87 files,zero findings",
-  "offline_packaging_checks": 82,
-  "core_tests": 87,
+  "credential_snapshot_scan": "passed,99 build-source files,zero findings",
+  "offline_packaging_checks": 92,
+  "core_total_tests": 100,
+  "core_active_tests": 99,
+  "core_skipped_opt_in_tests": 1,
   "core_failures": 0,
-  "ios_active_tests": 100,
-  "ios_skipped_live_methods": 2,
-  "ios_total_tests": 102,
+  "real_public_source_tests": 1,
+  "real_public_source_failures": 0,
+  "real_public_source_entries": 121,
+  "ios_total_tests": 115,
+  "ios_active_tests": 112,
+  "ios_skipped_opt_in_tests": 3,
   "ios_failures": 0,
+  "red_light_provider_regression_tests": 13,
+  "source_resolution_regression_tests": 39,
   "real_decoder_tests": [
     "MKV/AAC video output and time advancing passed",
     "MKV/DTS video output and time advancing passed"
   ],
   "device_archive": "passed,arm64 iOS17+",
-  "ipa_bytes": 20112346,
-  "ipa_sha256": "049b90c83b4f0c772a7b73453551c15bccfd9260a24db75b39e51a44543a7632",
+  "ipa_bytes": 20201922,
+  "ipa_sha256": "66b1fbaf632902514adf04835e61ddec22de1bf872d0b1f46bf8970f4d92b246",
   "embedded_vlckit_sha256": "456334664f2ed1964d563747d2c868169c2a6bf4fbb2e28ed1dfaba2e8bb34e9",
-  "device_ipa_artifact": 12614558069,
-  "artifact_zip_sha256": "5d0def3670f280d93addd04e5c61bdde9c31f6c7931a7712cd3670d768a11c75",
+  "device_ipa_artifact": 12617725708,
+  "artifact_zip_sha256": "83874fe0d118060b7220f9c4c951e8be4711e54a5e531fac20274de97f3bb914",
+  "public_source_report_artifact": 12617640880,
+  "public_source_report_zip_sha256": "1072da570a764c358c20adee17c17b47b247a26d15dc27ba6014ea7644f626ae",
+  "ios_results_artifact": 12616894404,
+  "ios_results_zip_sha256": "668eaa9899d60d6e37b62db78c8267be571ac8a1d1362e467996a930dadf73a7",
   "signing": "unsigned,SideStore re-signing required",
-  "physical_iPhone_playback": "not yet tested for0.3.5",
-  "live_account_playback": "not reached; latest public live run expired waiting for normal device authorization",
+  "physical_iPhone_playback": "not yet tested for0.3.6",
+  "live_account_playback": "not reached; no new account grant or cloud mutation in0.3.6 source discovery test",
+  "red_light_scope": "Independent native HTTP source services, dedicated browser/settings and unique episode pack resolution. Full Kodi Python, Coco/Gears external packs, Diggz skins, list/account integrations and arbitrary ZIP add-ons are not implemented.",
+  "source_service_results": [
+    {
+      "accepted": 81,
+      "id": "comet",
+      "name": "Comet",
+      "received": 91,
+      "status": "responded"
+    },
+    {
+      "accepted": 25,
+      "id": "mediafusion",
+      "name": "MediaFusion",
+      "received": 25,
+      "status": "responded"
+    },
+    {
+      "accepted": 4,
+      "id": "piratebay",
+      "name": "PirateBay / APIBay",
+      "received": 7,
+      "status": "responded"
+    },
+    {
+      "accepted": 0,
+      "id": "torrentdownloads",
+      "message": "The index did not return a valid RSS feed.",
+      "name": "Torrent Downloads",
+      "received": 0,
+      "status": "failed"
+    },
+    {
+      "accepted": 7,
+      "id": "torrentio",
+      "name": "Torrentio",
+      "received": 8,
+      "status": "responded"
+    },
+    {
+      "accepted": 4,
+      "id": "torz",
+      "name": "StremThru Torz",
+      "received": 4,
+      "status": "responded"
+    },
+    {
+      "accepted": 0,
+      "id": "zilean",
+      "name": "Zilean",
+      "received": 0,
+      "status": "responded"
+    }
+  ],
+  "aiostreams_live_instance": "not tested; isolated protocol/credential parsing tests passed",
   "public_snapshot": "Only reviewed AetherMedia files; fresh public repository history; no other project files/private ancestor commits",
   "billing_settings_changed": false,
-  "latest_live_test": {
+  "latest_live_account_test": {
     "run": 40235605030,
-    "job": 121296396243,
     "result": "authorization_not_completed_in_time",
-    "pending_credential_polls": 163,
     "account_or_cloud_requests": false,
     "playback_reached": false,
-    "simulator_and_private_file_cleanup": "passed",
-    "report_artifact": 12615417606,
-    "report_zip_sha256": "1b0a57a3e33890a1ddfb61d1d06f9e92381c92c83511c8185caa709fbb9b5785"
+    "cleanup": "passed"
   }
 }

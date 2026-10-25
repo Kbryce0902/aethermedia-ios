@@ -33,8 +33,8 @@
     },
     {
       "path": "AetherMedia/INSTALL_IPHONE.md",
-      "bytes": 1419,
-      "sha256": "ba50fe21f7ad60db7f276d0d9a124713e92313d37a863ea551529579e350c424"
+      "bytes": 1593,
+      "sha256": "ecad1e186788a6924f1e0acea0d25a363d3036c290da63c13805874d45ca0af0"
     },
     {
       "path": "AetherMedia/Package.swift",
@@ -43,8 +43,8 @@
     },
     {
       "path": "AetherMedia/README.md",
-      "bytes": 2598,
-      "sha256": "73c418eb9455e17cfd86a641ea93194c3bc4d8ba9412b04ab63af370037f5b5e"
+      "bytes": 2966,
+      "sha256": "df46928132ce4b6157030367c3cde8411c94bd495f5229725674faa8f7c1d3f5"
     },
     {
       "path": "AetherMedia/Resources/Assets.xcassets/AccentColor.colorset/Contents.json",
@@ -413,8 +413,8 @@
     },
     {
       "path": "AetherMedia/docs/SOURCE_COVERAGE.md",
-      "bytes": 4833,
-      "sha256": "ebd837038dac180885339fa83d241ff4a5f6c56057a4a0a7ab9c4615819ceb57"
+      "bytes": 5493,
+      "sha256": "16e697c33b87251f92ea59d1295db6de9687b79fb140e486e919cdf03eec4563"
     },
     {
       "path": "AetherMedia/scripts/build_ipa.sh",
@@ -463,8 +463,8 @@
     },
     {
       "path": "AetherMedia/verification/RESULTS.json",
-      "bytes": 1841,
-      "sha256": "9bd631867e71c2408ff2017c5d766ee6655b9a135ba3313d1395d6707d8b9ecd"
+      "bytes": 3604,
+      "sha256": "ff6529700e474b11498926c30fb2922b427bfcfaa3882e57ec4ed10ce2aee199"
     },
     {
       "path": "AetherMedia/verification/cloud-device-ipa-0.3.5.json",
@@ -472,14 +472,24 @@
       "sha256": "4fe6ba3ab3cebf8ee0617b6ceb57d96c828e1369c5b50dcfe2054b48b5dbafb4"
     },
     {
+      "path": "AetherMedia/verification/cloud-device-ipa-0.3.6.json",
+      "bytes": 993,
+      "sha256": "3feba7b21e2dd4a565029062c8374b9b3d252d9df356e5fb025881944e7dde64"
+    },
+    {
       "path": "AetherMedia/verification/live-real-debrid-40235605030.json",
       "bytes": 23128,
       "sha256": "b9a356c3f236eb85f41da52935ffb173d209d6d01e806141124044ccaa6579cf"
     },
     {
+      "path": "AetherMedia/verification/redlight-public-source-40242234176.json",
+      "bytes": 1338,
+      "sha256": "6281eb43657775cc50ed751535b008bc29f7b35bd7730427f4d23eed0a08c79a"
+    },
+    {
       "path": "HANDOFF.md",
-      "bytes": 7688,
-      "sha256": "612b69f1ad587f8e334ab4061f1faea4e5538753318fff638bc2b70c08055c18"
+      "bytes": 10474,
+      "sha256": "345c8b324ecc1f34ff4426b403958c8d8cf901781375a3b19a774f502a7a0312"
     },
     {
       "path": "PUBLICATION_REVIEW.md",
@@ -488,8 +498,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1810,
-      "sha256": "6a0df8e3471dcd270411cbdd5360437541ce41b9016afefc32073b4de0d2715f"
+      "bytes": 1943,
+      "sha256": "4ac30be7be2e5c8059abef14c7c941beacf8f47ea6b4addd141998e92467d66c"
     }
   ]
 }

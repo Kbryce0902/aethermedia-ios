@@ -1,6 +1,14 @@
 # AetherMedia public-build checkpoint
 
-Version 0.3.5 (8), October 25, 2026. Prepared from the existing app snapshot with a fresh repository history. The unsigned 0.3.5 device IPA has compiled, passed automated tests, and passed device-binary inspection. Live-account and physical-iPhone playback are not yet confirmed.
+Version 0.3.6 (9), October 25, 2026. Public source2be86e7d8c53ac1caae9048dc366d655bcdead9d compiled, passed99 active core tests (100 total/1 opt-in skip),112 active iOS tests (115 total/3 opt-in skips), a separate real-network public-source test,92 packaging checks and the arm64 device archive. Device IPA inspection passed; Real-Debrid account and physical-iPhone playback remain unconfirmed.
+
+Latest build: https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40242234176, job121316295909, standard public macos-15. Real Swift source-client check accepted121 entries: Comet81, MediaFusion25, PirateBay4, Torrentio7, Torz4. Zilean returned0; Torrent Downloads did not return a valid RSS feed to that runner and was reported failed without erasing other services. Counts are before cross-service/provider-manager deduplication. This is source discovery, not account/player verification. AIOStreams has only isolated protocol tests, not a live owner-instance test.
+
+Inspected/delivered AetherMedia-0.3.6-unsigned.ipa:20201922 bytes, SHA25666b1fbaf632902514adf04835e61ddec22de1bf872d0b1f46bf8970f4d92b246. Bundle com.kellen.aethermedia, devicearm64/iOS17+, embedded VLCKit SHA256456334664f2ed1964d563747d2c868169c2a6bf4fbb2e28ed1dfaba2e8bb34e9 and LGPL notices verified. Unsigned/no embedded profile; SideStore re-signs it. Public build-source snapshot99files and final report snapshot101files scanned with zero credential findings. IPA and sanitized source report identities are in AetherMedia/verification/RESULTS.json. Source code is unchanged after the passed build; this checkpoint only updates documentation/reports.
+
+Home → Red Light opens a dedicated Movies/TV browser using the native source-services provider. Settings → Red Light Settings configures instances/toggles and optional AIOStreams Search API credentials, stored only in Keychain. The old single APIBay adapter is gone. Full Kodi Python/Coco/Gears add-on parity remains unimplemented; do not claim an actual Kodi runtime or complete Diggz/Red Light menus. Nyaa/AnimeTosho run only for MediaItems explicitly classified as anime; the current Cinemeta catalogue normally labels series as TV. The main practical movie/TV workflow uses the seven general source services. Exact episode pack selection preserves cloud files/selections and rejects ambiguity. See docs/SOURCE_COVERAGE.md.
+
+The prior0.3.5 history and account-test observations follow.
 
 ## Current work
 
@@ -45,3 +53,8 @@ Strict title, year/IMDb and exact-episode checks plus excluded season packs can 
 The owner explicitly wants Red Light access comparable to Kodi Diggz, not manual magnets. Inspected official Red Light 2.9.1 package (SHA2563556c1c7896f2940ee673a89fbf4f38cea8a598e7322dcc46ef55bf06095db1f). Added native HTTP source services: Comet, MediaFusion, Zilean, Torz, Torrentio, PirateBay, Torrent Downloads RSS, AnimeTosho and Nyaa; optional AIOStreams Search API with Keychain configuration. Dedicated Home → Red Light movie/TV browser uses only that source provider. Ordinary discovery retains all providers and reports backend counts/failures. Added unique requested-episode selection from packs; existing cloud selections remain protected. See docs/SOURCE_COVERAGE.md for exact boundaries. This does not implement Kodi Python/Coco/Gears, skins or full add-on menus; do not claim full parity.
 
 Version0.3.6/build9 is prepared for a public standard-Mac build, with isolated regressions and a separate real-network Swift public-source check using Blender's CC film. Initial protocol preflight returned candidates from six services and empty Zilean. No new RD authorization, account mutation or paid service was used. New compilation/test/device archive results are pending. The delivered0.3.5IPA remains the last verified release until0.3.6passes and is inspected. No new live-account authorization run is requested by this commit.
+
+
+## 0.3.6 completion
+
+The build source2be86e7d8c53ac1caae9048dc366d655bcdead9d and run40242234176 passed. Initial run40242101634 stopped on a test fixture name colliding with NSObject.hash; only the fixture name changed for the successful run. Both real MKV decoder tests passed. Exact sanitized source report: verification/redlight-public-source-40242234176.json. Device report: verification/cloud-device-ipa-0.3.6.json. The inspected0.3.6IPA was saved and linked to the owner. No new RD device code was requested; the last account authorization expired. No billing settings, private repository visibility or unrelated projects were changed.

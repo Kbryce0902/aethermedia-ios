@@ -1,0 +1,22 @@
+{
+  "version": "0.3.6",
+  "bundle_version": "9",
+  "bundle_identifier": "com.kellen.aethermedia",
+  "size_bytes": 20201922,
+  "sha256": "66b1fbaf632902514adf04835e61ddec22de1bf872d0b1f46bf8970f4d92b246",
+  "cpu": "arm64",
+  "mach_o_platform": "iOS device",
+  "minimum_ios": "17.0",
+  "archive_crc": "passed",
+  "device_binary_validation": "passed",
+  "vlckit_framework_embedded": true,
+  "vlckit_device_arm64": true,
+  "vlckit_sha256": "456334664f2ed1964d563747d2c868169c2a6bf4fbb2e28ed1dfaba2e8bb34e9",
+  "third_party_notices_bundled": true,
+  "has_code_signature_load_command": false,
+  "has_embedded_profile": false,
+  "signing_status": "Unsigned; requires SideStore re-signing",
+  "source_commit": "2be86e7d8c53ac1caae9048dc366d655bcdead9d",
+  "github_run": "https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40242234176",
+  "physical_device_playback": "Not yet tested on physical iPhone for 0.3.6; public source discovery does not establish RD account resolution or playback."
+}

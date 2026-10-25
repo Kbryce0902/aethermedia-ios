@@ -1,0 +1,60 @@
+{
+  "acceptedSources" : 121,
+  "accountUsed" : false,
+  "fixture" : "Blender Big Buck Bunny (2008), Creative Commons",
+  "realNetwork" : true,
+  "reports" : [
+    {
+      "accepted" : 81,
+      "id" : "comet",
+      "name" : "Comet",
+      "received" : 91,
+      "status" : "responded"
+    },
+    {
+      "accepted" : 25,
+      "id" : "mediafusion",
+      "name" : "MediaFusion",
+      "received" : 25,
+      "status" : "responded"
+    },
+    {
+      "accepted" : 4,
+      "id" : "piratebay",
+      "name" : "PirateBay \/ APIBay",
+      "received" : 7,
+      "status" : "responded"
+    },
+    {
+      "accepted" : 0,
+      "id" : "torrentdownloads",
+      "message" : "The index did not return a valid RSS feed.",
+      "name" : "Torrent Downloads",
+      "received" : 0,
+      "status" : "failed"
+    },
+    {
+      "accepted" : 7,
+      "id" : "torrentio",
+      "name" : "Torrentio",
+      "received" : 8,
+      "status" : "responded"
+    },
+    {
+      "accepted" : 4,
+      "id" : "torz",
+      "name" : "StremThru Torz",
+      "received" : 4,
+      "status" : "responded"
+    },
+    {
+      "accepted" : 0,
+      "id" : "zilean",
+      "name" : "Zilean",
+      "received" : 0,
+      "status" : "responded"
+    }
+  ],
+  "scope" : "Public source discovery only; no account resolution or player test.",
+  "simulatedResponses" : false
+}

@@ -36,4 +36,4 @@ HTTP 451/code 35 is an explicit refusal for a selected source; startup retries d
 See the root [HANDOFF.md](../HANDOFF.md) for the next actions.
 
 
-0.3.6 adds Home → Red Light with a separate movie/TV browser, Settings → Red Light Settings for service toggles/instances/AIOStreams, per-service candidate/accepted counts and season-pack episode selection. See docs/SOURCE_COVERAGE.md. Full Kodi Python/Coco/Gears execution is not implemented. New build verification is pending.
+0.3.6 adds Home → Red Light with a separate movie/TV browser, Settings → Red Light Settings for service toggles/instances/AIOStreams, per-service candidate/accepted counts and season-pack episode selection. See docs/SOURCE_COVERAGE.md. Full Kodi Python/Coco/Gears execution is not implemented. The0.3.6 public build40242234176 passed99 active core tests (100 total/1 opt-in skip),112 active iOS tests (115 total/3 opt-in skips), a separate real-network source check, the two real MKV decoder tests and the device archive. The inspected IPA is20201922bytes, SHA25666b1fbaf632902514adf04835e61ddec22de1bf872d0b1f46bf8970f4d92b246. Real RD account and physical-iPhone playback are not yet confirmed.
