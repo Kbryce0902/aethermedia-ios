@@ -25,7 +25,18 @@
   "artifact_zip_sha256": "5d0def3670f280d93addd04e5c61bdde9c31f6c7931a7712cd3670d768a11c75",
   "signing": "unsigned,SideStore re-signing required",
   "physical_iPhone_playback": "not yet tested for0.3.5",
-  "live_account_playback": "pending fresh normal owner authorization and actual report",
+  "live_account_playback": "not reached; latest public live run expired waiting for normal device authorization",
   "public_snapshot": "Only reviewed AetherMedia files; fresh public repository history; no other project files/private ancestor commits",
-  "billing_settings_changed": false
+  "billing_settings_changed": false,
+  "latest_live_test": {
+    "run": 40235605030,
+    "job": 121296396243,
+    "result": "authorization_not_completed_in_time",
+    "pending_credential_polls": 163,
+    "account_or_cloud_requests": false,
+    "playback_reached": false,
+    "simulator_and_private_file_cleanup": "passed",
+    "report_artifact": 12615417606,
+    "report_zip_sha256": "1b0a57a3e33890a1ddfb61d1d06f9e92381c92c83511c8185caa709fbb9b5785"
+  }
 }

@@ -377,6 +377,11 @@
       "sha256": "5007517305f3ee46dc3796838971c06dfcbdaea4ae87a186f93a27df0c100fdd"
     },
     {
+      "path": "AetherMedia/docs/SOURCE_COVERAGE.md",
+      "bytes": 2585,
+      "sha256": "2dc378a8db2dbe356b657e2759b895a6620591233a0e6bcf97f730bee9e67e52"
+    },
+    {
       "path": "AetherMedia/scripts/build_ipa.sh",
       "bytes": 749,
       "sha256": "d76337a64b60546d322ff9d0c82e46889f7f308339be5c5b25cd93e3aafc6ea3"
@@ -423,8 +428,8 @@
     },
     {
       "path": "AetherMedia/verification/RESULTS.json",
-      "bytes": 1397,
-      "sha256": "9ecc4a815fbde5bd612c7643c7e8fe21d8a01f2c5dc9993acd285e773b9f17a0"
+      "bytes": 1841,
+      "sha256": "9bd631867e71c2408ff2017c5d766ee6655b9a135ba3313d1395d6707d8b9ecd"
     },
     {
       "path": "AetherMedia/verification/cloud-device-ipa-0.3.5.json",
@@ -432,9 +437,14 @@
       "sha256": "4fe6ba3ab3cebf8ee0617b6ceb57d96c828e1369c5b50dcfe2054b48b5dbafb4"
     },
     {
+      "path": "AetherMedia/verification/live-real-debrid-40235605030.json",
+      "bytes": 23128,
+      "sha256": "b9a356c3f236eb85f41da52935ffb173d209d6d01e806141124044ccaa6579cf"
+    },
+    {
       "path": "HANDOFF.md",
-      "bytes": 5107,
-      "sha256": "f37af0d60e554d7abc2fb0305754e53b1b43a72b59ce99ecbccc436c0ac644bc"
+      "bytes": 6303,
+      "sha256": "3c64652ad51fb2e8f8bc4cfad36ef89890b9732dff803293cd4c1dd2a064af6c"
     },
     {
       "path": "PUBLICATION_REVIEW.md",

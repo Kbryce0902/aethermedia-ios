@@ -1,0 +1,999 @@
+{
+  "events": [
+    {
+      "stage": "authorization",
+      "status": "waiting_for_device_approval"
+    },
+    {
+      "error": {
+        "category": "approval_not_completed_in_time"
+      },
+      "stage": "live_pipeline",
+      "status": "failed"
+    }
+  ],
+  "http_requests": [
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    },
+    {
+      "endpoint": "/oauth/v2/device/credentials",
+      "http_status": 403,
+      "method": "GET",
+      "response_bytes": 39
+    }
+  ],
+  "real_network": true,
+  "simulated_responses": false,
+  "status": "failed",
+  "test_scope": "Live iOS API and player integration; not a full UI tap-through or physical-iPhone test."
+}

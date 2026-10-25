@@ -12,7 +12,7 @@ The public Mac build passed: https://github.com/Kbryce0902/aethermedia-ios/actio
 
 Inspected AetherMedia-0.3.5-unsigned.ipa:20112346 bytes, SHA256049b90c83b4f0c772a7b73453551c15bccfd9260a24db75b39e51a44543a7632. Bundle com.kellen.aethermedia, version0.3.5/build8, iOS17+, devicearm64. Embedded VLCKit device binary and LGPL notices verified. Unsigned/no embedded profile; SideStore signs it. Device IPA artifact12614558069; artifact ZIP SHA2565d0def3670f280d93addd04e5c61bdde9c31f6c7931a7712cd3670d768a11c75. See AetherMedia/verification/RESULTS.json and cloud-device-ipa-0.3.5.json.
 
-The authorized live run is https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40235605030, job121296396243, source8b911b989c07bc9721aab86609e91bab26a45a21 (same Swift sources as the passed ordinary build). The public-only guard, credential check, isolated iPhone build and actual app-client device-code request passed. Sign-in artifact12614524550 was validated (ZIP SHA256ac84d434bc0e086099c44fc0c92e664f56dc890c5a646c4fc37a03f54d4581d4); its fresh display code expires at2026-10-25T21:49:23Z. The job is waiting for normal owner approval. The display code is deliberately not committed into repository history. After approval, monitor the existing run and inspect only its sanitized report; do not start another grant or reuse a stale code. Do not reuse previous codes or claim real playback passed before the sanitized report confirms it.
+The authorized live run is https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40235605030, job121296396243, source8b911b989c07bc9721aab86609e91bab26a45a21 (same Swift sources as the passed ordinary build). The isolated iPhone build and actual app-client device-code request passed. The run then ended after its device-code deadline without receiving authorization. The sanitized report records approval_not_completed_in_time,163 pending device-credential polls, and no token exchange, profile/cloud requests, torrent mutations or playback. Cleanup succeeded. Report artifact12615417606, ZIP SHA2561b0a57a3e33890a1ddfb61d1d06f9e92381c92c83511c8185caa709fbb9b5785; exact report AetherMedia/verification/live-real-debrid-40235605030.json. This attempt establishes no new playback result. The previous display code is expired. Do not start another grant until the owner is ready to approve a fresh normal code.
 
 ## 0.3.5 behavior and validation
 
@@ -31,3 +31,10 @@ The earlier compiled app's empty204 cloud-list repair and actual MKV/AAC and MKV
 5. Record actual results here, and deliver the inspected device IPA for SideStore.
 
 No billing/payment/spending setting is changed by this repository. If an account restriction still blocks public jobs, report the actual annotation and stop retrying. Do not add paid runners or increase a budget.
+
+
+## Source coverage review
+
+The owner reports mostly Cinemeta & Torrentio sources and asks for Red Light magnets. Current0.3.5 Red Light Native is a single APIBay HTTP adapter, not the Kodi Red Light runtime/provider ecosystem. Seren Native is limited to YTS/EZTV. The combined Cinemeta & Torrentio provider gets catalog/search metadata from Cinemeta and source results from Torrentio. ProviderManager queries all enabled source providers concurrently and retains provider IDs during deduplication; it does not intentionally replace native results with Torrentio.
+
+Strict title, year/IMDb and exact-episode checks plus excluded season packs can reduce native coverage. This is a verified implementation limitation; specific lookup failure needs the exact requested title/episode and the phone's provider warning. A public-fixture APIBay query from the authorized Windows desktop returned200 valid JSON with12 records; that does not establish phone connectivity or another title's coverage. No Real-Debrid credential was used. See AetherMedia/docs/SOURCE_COVERAGE.md. No provider code or new build was changed during this review.
