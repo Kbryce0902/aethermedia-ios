@@ -1,2 +1,15 @@
-# aethermedia-ios
-aether IOS
+# AetherMedia for iPhone
+
+A standalone iOS 17+ media app with a touch interface, Real-Debrid device authorization, metadata/source providers, and bundled extended video playback.
+
+This repository contains only AetherMedia. It starts with a fresh source snapshot and does not include other projects, previous repository history, account data, or old workflow logs.
+
+Version 0.3.5 (build 8) adds bounded startup retries when the first detail request immediately after creating a torrent returns HTTP 404/service code 7. Compilation and live playback verification of this version are pending. The earlier empty HTTP 204 cloud-list repair has been verified with a real authorized account.
+
+See [app instructions](AetherMedia/README.md), [installation](AetherMedia/INSTALL_IPHONE.md), [current handoff](HANDOFF.md), and [publication review](PUBLICATION_REVIEW.md).
+
+The build workflow uses a standard `macos-15` runner and runs only while this repository is public. It produces an unsigned device IPA for SideStore to sign. No Apple signing credentials are required by the hosted workflow. GitHub documents standard public-repository runner compute as free; account restrictions and service availability can still prevent jobs from starting.
+
+The opt-in live test needs normal owner device authorization each time. Its raw logs, private pending grant, access/refresh tokens, signed playback URLs, and account response values are not published. Only a short-lived authorization display card and a sanitized result are uploaded.
+
+Third-party components retain their own licenses. See [ThirdPartyNotices.txt](AetherMedia/Resources/ThirdPartyNotices.txt).

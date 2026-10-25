@@ -1,0 +1,59 @@
+name: Build AetherMedia iPhone IPA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'AetherMedia/Sources/**'
+      - 'AetherMedia/Tests/**'
+      - 'AetherMedia/Resources/**'
+      - 'AetherMedia/scripts/**'
+      - 'AetherMedia/Package.swift'
+      - 'AetherMedia/AetherMedia.xcodeproj/**'
+      - '.github/workflows/aethermedia-ios.yml'
+permissions:
+  contents: read
+concurrency:
+  group: aethermedia-iphone-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    if: ${{ github.repository == 'Kbryce0902/aethermedia-ios' && github.event.repository.private == false }}
+    runs-on: macos-15
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: AetherMedia
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+      - name: Validate project
+        run: |
+          python3 scripts/check_public_snapshot.py
+          python3 scripts/verify_package.py
+      - name: Test portable core
+        run: swift test --disable-swift-testing
+      - name: Test iOS application
+        run: bash scripts/test_ios.sh
+      - name: Build iPhone IPA
+        run: bash scripts/build_ipa.sh
+      - name: Upload iPhone IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: AetherMedia-iPhone
+          path: AetherMedia/build/AetherMedia-*.ipa
+          if-no-files-found: error
+          retention-days: 7
+      - name: Upload iOS test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: AetherMedia-iOS-test-results
+          path: AetherMedia/build/*.xcresult
+          if-no-files-found: ignore
+          retention-days: 1

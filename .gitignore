@@ -1,0 +1,17 @@
+**/.build/
+**/build/
+**/DerivedData/
+**/__pycache__/
+**/xcuserdata/
+*.xcuserstate
+.DS_Store
+.env
+.env.*
+*.ipa
+*.p12
+*.pfx
+*.mobileprovision
+*.key
+pending-grant.json
+authorize.json
+report.json

@@ -1,0 +1,49 @@
+name: Live Real-Debrid on virtual iPhone
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['AetherMedia/verification/LIVE_TEST_REQUEST.json']
+permissions:
+  contents: read
+concurrency:
+  group: aethermedia-live-rd-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  live:
+    if: ${{ github.repository == 'Kbryce0902/aethermedia-ios' && github.event.repository.private == false }}
+    runs-on: macos-15
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: AetherMedia
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check public source snapshot
+        run: python3 scripts/check_public_snapshot.py
+      - name: Build isolated virtual iPhone test
+        run: python3 scripts/live_simulator_test.py prepare
+      - name: Request Real-Debrid device code using the app client
+        run: python3 scripts/live_simulator_test.py request
+      - name: Publish sign-in instructions only
+        uses: actions/upload-artifact@v4
+        with:
+          name: AetherMedia-live-sign-in
+          path: AetherMedia/build/LiveReports/authorize.json
+          if-no-files-found: error
+          retention-days: 1
+      - name: Wait for authorization and test real cloud and playback
+        run: python3 scripts/live_simulator_test.py test
+      - name: Publish sanitized live result only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: AetherMedia-live-test-report
+          path: AetherMedia/build/LiveReports/report.json
+          if-no-files-found: ignore
+          retention-days: 1
+      - name: Remove temporary simulator and private files
+        if: always()
+        run: python3 scripts/live_simulator_test.py cleanup

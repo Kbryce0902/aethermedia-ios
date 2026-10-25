@@ -1,0 +1,435 @@
+{
+  "version": "0.3.5 (8)",
+  "files": [
+    {
+      "path": ".github/workflows/aethermedia-ios.yml",
+      "bytes": 1774,
+      "sha256": "22e7cc8c5dcd796363f3cbc5d5027ffa72ef37699fd886635b01b33eaf204cad"
+    },
+    {
+      "path": ".github/workflows/aethermedia-live-test.yml",
+      "bytes": 1765,
+      "sha256": "dfdda22595ae31765e221813876bcbd4986aab448f7828ab7eb4f03974b83eec"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 192,
+      "sha256": "969e611dfccfb6089b8a2628761683bbf67bc5eeab9b99c9290592a98368c2e1"
+    },
+    {
+      "path": "AetherMedia/.gitignore",
+      "bytes": 113,
+      "sha256": "b2ad518da3cc678a6936e5e385d8bcfc36673396480de4675017485e80ec1a32"
+    },
+    {
+      "path": "AetherMedia/AetherMedia.xcodeproj/project.pbxproj",
+      "bytes": 33425,
+      "sha256": "0842d2f41ecd6d6ffa6e81de6ba2088cebccd8eb67315ee1606947aaaa5a7dae"
+    },
+    {
+      "path": "AetherMedia/AetherMedia.xcodeproj/xcshareddata/xcschemes/AetherMedia.xcscheme",
+      "bytes": 2615,
+      "sha256": "39471140caf0d350f89bc3942c987058278ab8f6899e6d72017e14c9b24b23b6"
+    },
+    {
+      "path": "AetherMedia/INSTALL_IPHONE.md",
+      "bytes": 959,
+      "sha256": "b71c2d156643c646d23215ca5a85b4fa15e88a2d50a9e8b6bd8678f1f847d744"
+    },
+    {
+      "path": "AetherMedia/Package.swift",
+      "bytes": 840,
+      "sha256": "61b1e433f20ca96cacf265b4137657b58e77a3630959a0b377ea3fdd3598a62e"
+    },
+    {
+      "path": "AetherMedia/README.md",
+      "bytes": 2020,
+      "sha256": "1553be7c7b3a0d268295e796d9d4f75148fd34118192c890b9ab21ffa561979f"
+    },
+    {
+      "path": "AetherMedia/Resources/Assets.xcassets/AccentColor.colorset/Contents.json",
+      "bytes": 311,
+      "sha256": "90eaa4a1454b1925e76a76787d75b6964c74265f0aa83cea977b110a837d5b77"
+    },
+    {
+      "path": "AetherMedia/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+      "bytes": 81846,
+      "sha256": "c05118dec4596d421569da6c7dc894f7f73eba07fe5a783ef7d59803c823b61e"
+    },
+    {
+      "path": "AetherMedia/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "bytes": 203,
+      "sha256": "852920cb36e95beb53771138a4b8195a16fcce1cc31250632f246081cc638f9a"
+    },
+    {
+      "path": "AetherMedia/Resources/Assets.xcassets/Contents.json",
+      "bytes": 60,
+      "sha256": "f5fb0e1f3a8142892ed092efb5955c1c2cc537003a89ad7bbdb9dade7fe8985f"
+    },
+    {
+      "path": "AetherMedia/Resources/Info.plist",
+      "bytes": 1322,
+      "sha256": "0b1cae49000ec826234da5df51bbe56b39f8bf1a3850562410bf7caa9ffc6ee8"
+    },
+    {
+      "path": "AetherMedia/Resources/ThirdPartyNotices.txt",
+      "bytes": 27621,
+      "sha256": "f06cf6b8d52de015718ec81ef1ec5c9e4940d87465b2fce966fc98e93c4659a1"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/App/AetherMediaApp.swift",
+      "bytes": 521,
+      "sha256": "fbdc88f6477845b32b9da73dba1cc4aa4abca51a7a90044ad7a3e72de0b3b1f1"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Models/Episode.swift",
+      "bytes": 1177,
+      "sha256": "27cb8634e578b411c00c5522669b739ab096466b1a744066b6ef4fae6fd9e5a7"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Models/MediaDetails.swift",
+      "bytes": 3900,
+      "sha256": "a07d233559b02c0152fe60929ecdc68afeea62d7bbed16bf8ee840f221dad493"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Models/MediaItem.swift",
+      "bytes": 1540,
+      "sha256": "44a143d09411362e4c6c5bfe0f1dca82db036fecc3d6da47ef65417d56d0fdf9"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Models/MediaType.swift",
+      "bytes": 987,
+      "sha256": "3fff933dbd2adaff8c1b588d906e07275f47c5df644b8f73e462792381527863"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Models/PlayableStream.swift",
+      "bytes": 2046,
+      "sha256": "fe5a69a37d2962a72942488c05b076228866baa6e4e7ca392161feb168bbadda"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Models/RealDebridModels.swift",
+      "bytes": 12044,
+      "sha256": "72b530cd82b4cfbacb3828bc10854a95c84b20acc1d239270c9b49a9af5e728f"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Models/SourceStream.swift",
+      "bytes": 7967,
+      "sha256": "d54198a152e9afb2c91306ae0c41e356f19f17f0ecd93616158fd5064eccb9e0"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Models/UserWatchProgress.swift",
+      "bytes": 2302,
+      "sha256": "53d7b0421ac3407be13fafb5da083bd75fd4e7e74e6069dfcf8378cfb95eeef4"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Persistence/KeychainExport.swift",
+      "bytes": 103,
+      "sha256": "62d94de679152d3a44793cfc335e321c1b93eb861312568008a647079470e42e"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Persistence/PersistenceService.swift",
+      "bytes": 7414,
+      "sha256": "bb3a310bff6b4b319b8d74e522fc8f70cae3a7fd28a8cd84e4c9934b00e592d7"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Core/Security/KeychainService.swift",
+      "bytes": 4469,
+      "sha256": "44f3013ad80ff0374a3aa5a6ea250a987c2ea3b524ec45e7fd3fabf1b53c2b39"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Metadata/StremioMetadataClient.swift",
+      "bytes": 6159,
+      "sha256": "2d4f2fd715b485468c8e9b91d7afb79eb41f272c8a14f614408f1e93a71bdb68"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Playback/ExtendedPlaybackController.swift",
+      "bytes": 5611,
+      "sha256": "5bdc293e5d3562825c924e7c22deb54fbf8fd26a3bce677358435fc4b22c603f"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Playback/FormatSupportEvaluator.swift",
+      "bytes": 1987,
+      "sha256": "df8d4b3b239cdc9c1ee0b7c90b45b81d8ed3b2f02ff84deb421a4109a9f7d2ef"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Playback/PlaybackEngine.swift",
+      "bytes": 12830,
+      "sha256": "db5af7257872f4a27199e5bc244a2100deeb4dc53f8f909e359dff565d5b951d"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Providers/BuiltInTorrentioProvider.swift",
+      "bytes": 4233,
+      "sha256": "08576ae3a1b268046867a641fae355a7a252eb683e45b9fe48820e39d537e4a2"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Providers/DebridCloudProvider.swift",
+      "bytes": 3657,
+      "sha256": "dd7fd56e7982e18249588c200c1e710f3a869f0224e5cf67e271fd31a7e318b5"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Providers/ManualMagnetProvider.swift",
+      "bytes": 2308,
+      "sha256": "25bc66a8b1dcea7023369f382f8e0f0715e451e290348d366f3a3087b4d1d6ad"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Providers/MediaProviderProtocol.swift",
+      "bytes": 1673,
+      "sha256": "8a2621695a94d3e7c44bc570a3bc24b70fd166e6cd4120e866739f0e47358dad"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Providers/NativeAddonProviders.swift",
+      "bytes": 14323,
+      "sha256": "848a832504150da7e01cd66b4a2d0d3fd44ab2d0e2ab3c6f508022882b5055e8"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/Providers/ProviderManager.swift",
+      "bytes": 6059,
+      "sha256": "fc6ade05718d1e61af4c383b72c67fa405e825ed68939fd9f608d2e4b68d8d2c"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/RealDebrid/RealDebridClient.swift",
+      "bytes": 28742,
+      "sha256": "3c91b8ccea10a57175f9103cfc0399939ff11c10fc49538da34ba8081b1b1285"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/Services/RealDebrid/RealDebridRequestFailure.swift",
+      "bytes": 5073,
+      "sha256": "11e38ec450653c3a847611f952b96b65675636100bcb3435547db616649de93b"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Components/GlassComponents.swift",
+      "bytes": 434,
+      "sha256": "fb7c23d66e80255db58d60cb588109b32d3eecb156b39d6d7f1c0a12de95bd63"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/DesignSystem/AetherTabBar.swift",
+      "bytes": 2343,
+      "sha256": "8c36e7f4f1047319c4116b368311bcbf8bb58f54ce6752d624b59ea87287aa8c"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/DesignSystem/ArtworkCard.swift",
+      "bytes": 8872,
+      "sha256": "eb1afdd381ac678e248fc6635178a065e0c74cd4807f8abdd2b682c087142094"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/DesignSystem/EmptyAndErrorStates.swift",
+      "bytes": 3585,
+      "sha256": "80e439053dffb50d5f6029d9d72ee31fe1187f03608d129fc148befc5882e448"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/DesignSystem/GlassButton.swift",
+      "bytes": 3870,
+      "sha256": "9d29a7d39d6d678ae5b670850894037def7ccc55f105f3b6c7b306984cc5f5fb"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/DesignSystem/LiquidGlassModifier.swift",
+      "bytes": 2694,
+      "sha256": "b11357f74448fdf75d23a376acfb9dc7214c7dda709da4ef7e096ef638b335e7"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/MainTabView.swift",
+      "bytes": 843,
+      "sha256": "1890ec9cf243e9500363ba88af240877ec5f13f15dcb5e4787103ad509a653db"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Auth/DeviceAuthorizationView.swift",
+      "bytes": 8526,
+      "sha256": "56c333a31dc4d47d6439ef74ab9fdf1fdb042ac27739fdd994608cfb9ccf82b7"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Detail/MediaDetailView.swift",
+      "bytes": 12522,
+      "sha256": "444b85fb0dbc56ea58c041c1eb09b02a18bc4e667e57c38a00a2b876f751e9b6"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Detail/SourceSelectionModel.swift",
+      "bytes": 3186,
+      "sha256": "15792bf23be818c829d8531a3cdf27f0895c7094893d4d8e8a560fbbec3c7661"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Detail/SourceSelectionSheet.swift",
+      "bytes": 13402,
+      "sha256": "1f2160046081b7b17113f9e67c5d5bdef9df6fa36a84342c2229acc6e58ca7ff"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Home/HomeView.swift",
+      "bytes": 7722,
+      "sha256": "063fa3596084e333c1133202e6ea3bdcc0cfc4bd35fb6ff1f89aeacd8711c7e0"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Library/LibraryView.swift",
+      "bytes": 10733,
+      "sha256": "7a6f534c3340087a18136056658b84fdb554b9af3dbba682121c79d7ec3d52e5"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Library/MagnetImportSheet.swift",
+      "bytes": 2939,
+      "sha256": "92477e8c7b383c0a47c4546abbee4c3783fa07dce62b5d2d12c3d256e4e382eb"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Player/ExtendedVideoPlayer.swift",
+      "bytes": 3964,
+      "sha256": "8639adb4cf0339c6110a3f706a54b4254e285f2d2004ea6393d6480637abfb27"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Player/PlayerView.swift",
+      "bytes": 3106,
+      "sha256": "236c57e69af7cde4c41d45c98e3741f1363d385f220fbc701c34a878be6d96f2"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Search/SearchView.swift",
+      "bytes": 7249,
+      "sha256": "30ffbceb2162d241a274730c7b65c91893a38cb7fe7bbbedbbb5d72e23e22bcd"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Settings/NativeSourceSettingsView.swift",
+      "bytes": 1693,
+      "sha256": "771deadd4336e456a8b56208aff5e6511d230823a4d78ef9768705e0ea4654e9"
+    },
+    {
+      "path": "AetherMedia/Sources/AetherMedia/UI/Views/Settings/SettingsView.swift",
+      "bytes": 10113,
+      "sha256": "7f558003417a8102fafeff2a120b89b6ed80439d3cfce5e6da731fc352bf9f7b"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/ExtendedPlaybackTests.swift",
+      "bytes": 2153,
+      "sha256": "1293cb22879b382f0ea7fafc9db790f0ae17d6ff63c03b5ddb8aaba279c1c43c"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/Fixtures/mkv-aac.mkv",
+      "bytes": 61842,
+      "sha256": "85ef532a2b8ce1db68846b069479fa917b3760d7612a69d1629f13c6c8ed03c5"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/Fixtures/mkv-dts.mkv",
+      "bytes": 220019,
+      "sha256": "e16e02ba1bec4faac780ebaec3d4e0683b493a334bbb16bb781c69a637792603"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/FormatSupportTests.swift",
+      "bytes": 2097,
+      "sha256": "c71bce9872d2728b9516e258493d8f99ca99f6eadc9a4d1d5f792c985bd72696"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/LiveRealDebridTests.swift",
+      "bytes": 23230,
+      "sha256": "7016995a57109602b0135a55da86c51b796b38b1b7045babaa75421b95cb589b"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/MagnetValidationTests.swift",
+      "bytes": 1294,
+      "sha256": "50fca2812572df06e6433a2084db7ebbef8e921a9a85a97e83d5ff8f199cc81d"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/MetadataProviderTests.swift",
+      "bytes": 3307,
+      "sha256": "b196383e057356e0869f4be3b83aba8cd0ad0da66096b1a4ad753adb769771b7"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/MockRealDebridClient.swift",
+      "bytes": 7414,
+      "sha256": "fb0324d1198907e765335cd02cfeb80adbe2a60be57019927f01823dd497ca28"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/NativeAddonProviderTests.swift",
+      "bytes": 8187,
+      "sha256": "ac4ddb74cb681a1fbb9eecc2ee2b35239a3a6847a4cfb5d4327c044c1f793d13"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/NetworkRegressionTests.swift",
+      "bytes": 9882,
+      "sha256": "0e3f6bbdee4cbe95a2049dc731f81296f0ea179907e45db4179920576e20a2a1"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/PersistenceTests.swift",
+      "bytes": 3057,
+      "sha256": "461c82c88fd181f0a7b5880a4c50869c2e7306422164c880cdf1ef84ff89378b"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/PlaybackEngineTests.swift",
+      "bytes": 2760,
+      "sha256": "42e363a3a2f7a7fd91af38d700af926ab6aadfee6bf70447b7db1712c0be3877"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/ProviderManagerTests.swift",
+      "bytes": 4162,
+      "sha256": "99cfa11f087e01d3090caed33534ace8b76e941d90af02ca3aad63c4aa36eca5"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/RealDebridClientTests.swift",
+      "bytes": 3643,
+      "sha256": "6afc22e12631013502bb89e5c8e2e0cdd43352210f87dfa70b04a2d1517aacda"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/SourceResolutionRegressionTests.swift",
+      "bytes": 39951,
+      "sha256": "614050665b0b5ad0e63a8b60b6741f0b3fbeedfd4da6c8eb714c96312fbe5ff1"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/SourceSelectionTests.swift",
+      "bytes": 5552,
+      "sha256": "2bbdcc265bb46c03d04522da11cf8ea9dea63630b5f2e06dbce48afffc026395"
+    },
+    {
+      "path": "AetherMedia/Tests/AetherMediaTests/URLProtocolStub.swift",
+      "bytes": 3490,
+      "sha256": "5007517305f3ee46dc3796838971c06dfcbdaea4ae87a186f93a27df0c100fdd"
+    },
+    {
+      "path": "AetherMedia/scripts/build_ipa.sh",
+      "bytes": 749,
+      "sha256": "d76337a64b60546d322ff9d0c82e46889f7f308339be5c5b25cd93e3aafc6ea3"
+    },
+    {
+      "path": "AetherMedia/scripts/check_public_snapshot.py",
+      "bytes": 2686,
+      "sha256": "f9585b3df4ba0b737d7532990cabb54e35231e68acda9012b5171022c97226b5"
+    },
+    {
+      "path": "AetherMedia/scripts/generate_xcode_project.py",
+      "bytes": 10826,
+      "sha256": "96488c7b8acf9891ea6f082bddcd544631eb949a411c49850f1c1e33cfc9efe8"
+    },
+    {
+      "path": "AetherMedia/scripts/live_simulator_test.py",
+      "bytes": 7070,
+      "sha256": "05ed40e276eb7179c5a0baf01dfbdd6910fe7f039c045240a75db3c4eefb9ea8"
+    },
+    {
+      "path": "AetherMedia/scripts/package_ipa.py",
+      "bytes": 2467,
+      "sha256": "0d55592fded48048946cb823bb7eac0bd47ea81fcd4588243f06efde9e432053"
+    },
+    {
+      "path": "AetherMedia/scripts/sign_ipa.sh",
+      "bytes": 4282,
+      "sha256": "8b4cae023dac7109d5228d529479404389dde541bb84ae5aaff4797bb2fe9c4e"
+    },
+    {
+      "path": "AetherMedia/scripts/test_ios.sh",
+      "bytes": 1158,
+      "sha256": "5ae388accecb0bfba93006566a4b8c94d461992ceea6513bb0066128c1d91e1a"
+    },
+    {
+      "path": "AetherMedia/scripts/verify_package.py",
+      "bytes": 3843,
+      "sha256": "db63498195f51356367ac5a85d26890c22f360337cfdeda80f50924b9b12f928"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 3293,
+      "sha256": "703e5ddabe0016b056a9784d8d61971cb04b398017bedbfef9f0a24991b9543f"
+    },
+    {
+      "path": "PUBLICATION_REVIEW.md",
+      "bytes": 1775,
+      "sha256": "60b52c1329d55a881010168a8356a03fbf00831af445a0f5d32ae15c3a02d0bf"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1647,
+      "sha256": "ced5b1d361f2e5904f2cfa09f92d678f72378fb8983af0980de5fa96407bd72a"
+    }
+  ]
+}
