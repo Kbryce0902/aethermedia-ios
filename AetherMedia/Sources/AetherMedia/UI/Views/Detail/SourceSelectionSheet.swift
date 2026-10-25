@@ -19,7 +19,7 @@ public struct SourceSelectionSheet: View {
         case res4K = "4K UHD"
         case res1080p = "1080p"
         case seren = "Seren Native"
-        case redlight = "Red Light Native"
+        case redlight = "Red Light"
     }
     
     public init(
@@ -54,6 +54,17 @@ public struct SourceSelectionSheet: View {
                     }.font(.footnote).padding(.horizontal, 16).padding(.bottom, 8)
                 }
                 Divider()
+                if !model.backendReports.isEmpty {
+                    DisclosureGroup("Red Light source results") {
+                        ForEach(model.backendReports) { report in
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("\(report.name): \(report.accepted) sources from \(report.received) results")
+                                if let message = report.message { Text(message).foregroundStyle(.orange) }
+                            }.font(.caption).frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        NavigationLink("Red Light Settings", destination: RedLightSettingsView())
+                    }.font(.footnote).padding(.horizontal, 16).padding(.vertical, 8)
+                }
                 
                 // Sources List or Loading State
                 if let failure = model.resolutionFailure {

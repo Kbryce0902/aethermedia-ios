@@ -24,6 +24,7 @@ public final class KeychainService: @unchecked Sendable {
         case rdRefreshToken = "rd_refresh_token"
         case rdClientId = "rd_client_id"
         case rdClientSecret = "rd_client_secret"
+        case redLightConfiguration = "red_light_configuration"
     }
     
     // MARK: - Read / Write / Delete

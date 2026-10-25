@@ -38,6 +38,11 @@ jobs:
           python3 scripts/verify_package.py
       - name: Test portable core
         run: swift test --disable-swift-testing
+      - name: Check real Red Light source services with a public film
+        env:
+          AETHERMEDIA_SOURCE_LIVE: '1'
+          AETHERMEDIA_SOURCE_REPORT: build/redlight-public-source-report.json
+        run: swift test --disable-swift-testing --filter RedLightPublicSourceTests
       - name: Test iOS application
         run: bash scripts/test_ios.sh
       - name: Build iPhone IPA
@@ -57,3 +62,11 @@ jobs:
           path: AetherMedia/build/*.xcresult
           if-no-files-found: ignore
           retention-days: 1
+      - name: Upload public source service report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: AetherMedia-RedLight-source-check
+          path: AetherMedia/build/redlight-public-source-report.json
+          if-no-files-found: ignore
+          retention-days: 7

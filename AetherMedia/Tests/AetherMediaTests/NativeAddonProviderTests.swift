@@ -39,28 +39,8 @@ final class NativeAddonProviderTests: XCTestCase {
         XCTAssertEqual(results.first?.sizeBytes,2345)
         XCTAssertEqual(results.first?.providerId,"native.seren")
     }
-    func testRedLightUsesIndependentIndexAndValidatesMovieYear() async throws {
-        URLProtocolStub.configure { request in
-            XCTAssertEqual(request.url?.host,"apibay.org")
-            XCTAssertEqual(request.url?.path,"/q.php")
-            XCTAssertNil(request.value(forHTTPHeaderField: "Authorization"))
-            return .init([
-                ["id":"1","name":"Example.Film.2020.1080p.WEB-DL","info_hash":self.fixtureHash,"size":"1234","seeders":"9"],
-                ["id":"2","name":"Example.Film.1990.1080p","info_hash":self.fixtureHash],
-                ["id":"3","name":"Other.Film.2020.1080p","info_hash":self.fixtureHash],
-                ["id":"0","name":"Example.Film.2020","info_hash":self.fixtureHash]
-            ])
-        }
-        let results = try await RedLightNativeProvider(client:client()).discoverSources(for:movie,episode:nil)
-        XCTAssertEqual(results.count,1)
-        XCTAssertEqual(results.first?.providerId,"native.redlight")
-        XCTAssertEqual(results.first?.seeds,9)
-    }
-    func testEmptyIndexesDoNotCreateSources() async throws {
-        URLProtocolStub.configure { _ in .init([["id":"0","name":"No results"]]) }
-        let sources = try await RedLightNativeProvider(client:client()).discoverSources(for:movie,episode:nil)
-        XCTAssertTrue(sources.isEmpty)
-    }
+
+
     func testNativeResolutionPreservesOwnershipAndCodecMetadata() async throws {
         let source = SourceStream(title:"Example.Film.1080p.DTS",providerName:"Seren Native",magnetURL:"magnet:?xt=urn:btih:\(fixtureHash)",providerId:"native.seren")
         let result = try await SerenNativeProvider(client:client()).resolve(source:source,using:MockRealDebridClient())
@@ -83,26 +63,6 @@ final class NativeAddonProviderTests: XCTestCase {
         XCTAssertFalse(NativeReleaseMatcher.matches("Doctor.Who.2005.S01E01.1080p", item: show, episode: episode, sourceImdbId: show.imdbId))
     }
 
-    func testRedLightTitleFallbackIncludesSeriesYearAndRejectsOtherEditions() async throws {
-        let counts = RequestCounts()
-        URLProtocolStub.configure { request in
-            let q = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)!.queryItems!.first { $0.name == "q" }!.value!
-            let call = counts.increment("query")
-            if call == 1 { return .init([["id": "0", "name": "No results"]]) }
-            XCTAssertEqual(q, "Doctor Who 2023 S01E01")
-            return .init([
-                ["id": "1", "name": "Doctor.Who.2023.S01E01.2160p", "info_hash": self.fixtureHash],
-                ["id": "2", "name": "Doctor.Who.2005.S01E01.1080p", "info_hash": self.fixtureHash],
-                ["id": "3", "name": "Doctor.Who.S01E01.1080p", "info_hash": self.fixtureHash],
-                ["id": "4", "name": "Doctor.Who.S01E01.1080p", "info_hash": self.fixtureHash, "imdb": "tt1234567"],
-                ["id": "5", "name": "Doctor.Who.2023.S01E01.1080p", "info_hash": self.fixtureHash, "imdb_id": "9999999"]
-            ])
-        }
-        let show = MediaItem(id: "tt1234567", title: "Doctor Who", releaseYear: 2023, type: .tvShow, imdbId: "tt1234567")
-        let sources = try await RedLightNativeProvider(client: client()).discoverSources(for: show, episode: episode)
-        XCTAssertEqual(sources.count, 2)
-        XCTAssertEqual(counts.get("query"), 2)
-    }
 
     func testEpisodeBoundariesAndAmbiguousMultiEpisodeReleases() {
         XCTAssertTrue(NativeReleaseMatcher.hasExactEpisode("Example.S01E01.1080p",episode:episode))

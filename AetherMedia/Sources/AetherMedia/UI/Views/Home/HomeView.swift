@@ -26,6 +26,10 @@ public struct HomeView: View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 24) {
+                    NavigationLink(destination: RedLightBrowserView()) {
+                        Label("Red Light · Movies & TV", systemImage: "play.rectangle.fill")
+                            .font(.headline).foregroundStyle(.red).padding(.horizontal, 16)
+                    }
                     
                     if let loadError {
                         ErrorStateBanner(message: loadError) { Task { await loadHomeData() } }

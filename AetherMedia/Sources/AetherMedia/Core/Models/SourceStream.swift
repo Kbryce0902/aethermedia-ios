@@ -91,6 +91,8 @@ public struct SourceStream: Identifiable, Codable, Sendable, Equatable, Hashable
     public let providerId: String?
     public let cloudTorrentId: String?
     public let directURL: URL?
+    public let targetSeason: Int?
+    public let targetEpisode: Int?
     
     public init(
         id: String = UUID().uuidString,
@@ -109,7 +111,9 @@ public struct SourceStream: Identifiable, Codable, Sendable, Equatable, Hashable
         originalFileName: String? = nil,
         providerId: String? = nil,
         cloudTorrentId: String? = nil,
-        directURL: URL? = nil
+        directURL: URL? = nil,
+        targetSeason: Int? = nil,
+        targetEpisode: Int? = nil
     ) {
         self.id = id
         self.title = title
@@ -128,6 +132,8 @@ public struct SourceStream: Identifiable, Codable, Sendable, Equatable, Hashable
         self.providerId = providerId
         self.cloudTorrentId = cloudTorrentId
         self.directURL = directURL
+        self.targetSeason = targetSeason
+        self.targetEpisode = targetEpisode
     }
     
     public var formattedSize: String {

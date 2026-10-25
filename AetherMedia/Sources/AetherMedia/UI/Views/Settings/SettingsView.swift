@@ -68,8 +68,10 @@ public struct SettingsView: View {
                 }
                 
                 Section {
+                    NavigationLink("Red Light", destination: RedLightBrowserView())
+                    NavigationLink("Red Light Settings", destination: RedLightSettingsView())
                     NavigationLink("Native Source Settings", destination: NativeSourceSettingsView())
-                    Text("Seren and Red Light source modes are native implementations. Kodi ZIP add-ons and their full menus are not executed.").font(.footnote).foregroundStyle(.secondary)
+                    Text("Red Light searches its native source services on the iPhone. Kodi Python scraper packs require a separate compatibility layer.").font(.footnote).foregroundStyle(.secondary)
                 }
 
                 // MARK: - Playback Settings

@@ -4,7 +4,7 @@ A standalone iOS 17+ media app with a touch interface, Real-Debrid device author
 
 This repository contains only AetherMedia. It starts with a fresh source snapshot and does not include other projects, previous repository history, account data, or old workflow logs.
 
-Version 0.3.5 (build 8) adds bounded startup retries when the first detail request immediately after creating a torrent returns HTTP 404/service code 7. Compilation,87 core tests,100 active iOS tests and the arm64 device archive passed. Live-account and physical-iPhone playback verification remain pending. The earlier empty HTTP 204 cloud-list repair has been verified with a real authorized account.
+Version 0.3.6 (build 9) adds a dedicated Red Light browser and native clients for its source services, optional AIOStreams configuration, backend diagnostics and exact episode selection from season packs. See [source coverage](AetherMedia/docs/SOURCE_COVERAGE.md) for supported services and the Kodi runtime boundary. New compilation and test results are pending. The prior 0.3.5 device build and automated tests passed; real-account and physical-iPhone playback remain unconfirmed.
 
 See [app instructions](AetherMedia/README.md), [installation](AetherMedia/INSTALL_IPHONE.md), [current handoff](HANDOFF.md), and [publication review](PUBLICATION_REVIEW.md).
 

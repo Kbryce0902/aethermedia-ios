@@ -14,6 +14,7 @@ public final class SourceSelectionModel: ObservableObject {
     @Published public private(set) var sources: [SourceStream] = []
     @Published public private(set) var isLoading = true
     @Published public private(set) var providerWarnings: [String] = []
+    @Published public private(set) var backendReports: [SourceBackendReport] = []
     @Published public private(set) var discoveryError: String?
     @Published public private(set) var resolutionFailure: SourceResolutionFailure?
     @Published public private(set) var resolvingSourceId: String?
@@ -37,11 +38,12 @@ public final class SourceSelectionModel: ObservableObject {
         discoveryError = nil
         defer { if discoveryGeneration == generation { isLoading = false } }
         do {
-            let discovered = try await manager.discoverSources(for: item, episode: episode)
+            let discovered = try await manager.discoverSourceResult(for: item, episode: episode)
             try Task.checkCancellation()
             guard generation == discoveryGeneration else { return }
-            sources = discovered
-            providerWarnings = manager.latestSourceWarnings()
+            sources = discovered.sources
+            providerWarnings = discovered.warnings
+            backendReports = discovered.reports
         } catch {
             guard !Task.isCancelled, generation == discoveryGeneration else { return }
             // A failed refresh preserves the previous list.

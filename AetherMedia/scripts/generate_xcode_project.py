@@ -62,7 +62,7 @@ for configuration in ['Debug','Release']:
     add('project'+configuration,'XCBuildConfiguration',buildSettings=settings,name=configuration)
     common={'PRODUCT_NAME':'$(TARGET_NAME)','TARGETED_DEVICE_FAMILY':'1',
             'SUPPORTED_PLATFORMS':'iphoneos iphonesimulator','SUPPORTS_MACCATALYST':'NO',
-            'ENABLE_DEBUG_DYLIB':'NO','CODE_SIGN_STYLE':'Automatic','DEVELOPMENT_TEAM':'','CURRENT_PROJECT_VERSION':'8','MARKETING_VERSION':'0.3.5',
+            'ENABLE_DEBUG_DYLIB':'NO','CODE_SIGN_STYLE':'Automatic','DEVELOPMENT_TEAM':'','CURRENT_PROJECT_VERSION':'9','MARKETING_VERSION':'0.3.6',
             'LD_RUNPATH_SEARCH_PATHS':['$(inherited)','@executable_path/Frameworks']}
     add('app'+configuration,'XCBuildConfiguration',buildSettings={**common,
         'PRODUCT_BUNDLE_IDENTIFIER':'com.kellen.aethermedia','GENERATE_INFOPLIST_FILE':'NO',

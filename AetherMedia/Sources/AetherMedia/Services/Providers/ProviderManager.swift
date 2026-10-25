@@ -91,10 +91,31 @@ public final class ProviderManager: @unchecked Sendable {
         return results.filter { seen.insert($0.id).inserted }.sorted { $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending }
     }
     public func discoverSources(for item: MediaItem, episode: Episode?) async throws -> [SourceStream] {
+        let batch = try await discoverSourceResult(for: item, episode: episode)
+        return batch.sources
+    }
+    public func discoverSourceResult(for item: MediaItem, episode: Episode?) async throws -> SourceDiscoveryResult {
         let providers = active(.sourceDiscovery).filter { $0.supportedTypes.contains(item.type) }
-        let sources = try await collect(providers, reportSourceWarnings: true) { try await $0.discoverSources(for: item, episode: episode) }
+        let batches = try await withThrowingTaskGroup(of: SourceDiscoveryResult.self) { group in
+            for provider in providers {
+                group.addTask {
+                    do { return try await provider.discoverSourceResult(for: item, episode: episode) }
+                    catch {
+                        try Task.checkCancellation()
+                        return SourceDiscoveryResult(sources: [], warnings: ["\(provider.displayName): \(error.localizedDescription)"])
+                    }
+                }
+            }
+            var results: [SourceDiscoveryResult] = []
+            for try await batch in group { results.append(batch) }
+            return results
+        }
+        try Task.checkCancellation()
+        let warnings = batches.flatMap(\.warnings).sorted()
+        locked { sourceWarnings = warnings }
+        let sources = batches.flatMap(\.sources)
         var seen = Set<String>()
-        return sources.filter {
+        let sorted = sources.filter {
             let key = "\($0.providerId ?? ""):\($0.cloudTorrentId ?? $0.infoHash ?? $0.directURL?.absoluteString ?? $0.id):\($0.fileIndex ?? -1)"
             return seen.insert(key).inserted
         }.sorted { a, b in
@@ -103,6 +124,10 @@ public final class ProviderManager: @unchecked Sendable {
             if a.quality != b.quality { return a.quality > b.quality }
             return (a.seeds ?? 0) > (b.seeds ?? 0)
         }
+        if sorted.isEmpty, let warning = warnings.first, batches.allSatisfy({ $0.reports.isEmpty }) {
+            throw ProviderServiceError.unavailable(warning)
+        }
+        return SourceDiscoveryResult(sources: sorted, warnings: warnings, reports: batches.flatMap(\.reports))
     }
     public func resolve(source: SourceStream) async throws -> PlayableStream {
         guard let provider = active(.directPlayback).first(where: { $0.id == source.providerId }) else {

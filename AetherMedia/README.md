@@ -1,6 +1,6 @@
 # AetherMedia
 
-Native SwiftUI app for iOS 17+, bundle `com.kellen.aethermedia`, version 0.3.5 (8).
+Native SwiftUI app for iOS 17+, bundle `com.kellen.aethermedia`, version 0.3.6 (9).
 
 ## Build and install
 
@@ -21,7 +21,7 @@ The output is `build/AetherMedia-unsigned.ipa`. Local packaging checks alone do 
 
 ## Providers and playback
 
-Cinemeta supplies metadata. Torrentio-style source discovery, limited independent native Seren-style YTS/EZTV providers, Red Light-style APIBay discovery, existing Debrid cloud files, and manual magnets are supported. The original Kodi Python add-ons and arbitrary provider packs do not run in this app.
+Cinemeta supplies metadata. Torrentio-style source discovery, limited independent native Seren-style YTS/EZTV providers, Red Light native source services and optional AIOStreams, existing Debrid cloud files, and manual magnets are supported. The original Kodi Python add-ons and arbitrary provider packs do not run in this app.
 
 Real-Debrid resolution preserves existing cloud file selections and validates source identity and file/link mappings. Compatible streams use AVPlayer; the bundled VideoLAN player handles extended formats. Extended-player PiP and AirPlay are not implemented.
 
@@ -34,3 +34,6 @@ Earlier real authorized runs verified OAuth, Premium profile decoding, the empty
 HTTP 451/code 35 is an explicit refusal for a selected source; startup retries do not override it. Successful physical-iPhone or live-account playback of 0.3.5 is not yet confirmed.
 
 See the root [HANDOFF.md](../HANDOFF.md) for the next actions.
+
+
+0.3.6 adds Home → Red Light with a separate movie/TV browser, Settings → Red Light Settings for service toggles/instances/AIOStreams, per-service candidate/accepted counts and season-pack episode selection. See docs/SOURCE_COVERAGE.md. Full Kodi Python/Coco/Gears execution is not implemented. New build verification is pending.

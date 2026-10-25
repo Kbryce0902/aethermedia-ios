@@ -10,3 +10,6 @@ Requires iOS 17 or later and a compiled arm64 device IPA. This repository's sour
 The hosted build does not require an Apple developer subscription or a signing certificate. SideStore performs signing and determines its own account/device requirements. Compiling and signing are separate steps.
 
 Version0.3.5 (8) compiled and passed automated tests and device IPA inspection; real-account and physical-iPhone playback acceptance are pending. Do not label a source ZIP or simulator bundle as an iPhone IPA. App Store distribution and TestFlight are outside this build workflow.
+
+
+For0.3.6: open Home → Red Light to browse/search titles and use only its enabled sources. Open Red Light Settings to choose instances or configure your AIOStreams Search API account. The iPhone needs no PC/Kodi service for these native backends. Full Kodi Python add-on compatibility is not supplied. Install only the newly compiled device IPA after its checks pass.

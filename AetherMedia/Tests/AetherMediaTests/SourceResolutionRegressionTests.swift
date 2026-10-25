@@ -682,4 +682,51 @@ final class SourceResolutionRegressionTests: XCTestCase {
         let stream = try await provider.resolve(source: source, using: client())
         XCTAssertEqual(stream.streamURL, url)
     }
+    func testRedLightPackReusesExistingEpisodeWithoutChangingKodiSelections() async throws {
+        let counts = RequestCounts()
+        URLProtocolStub.configure { request in
+            let path = request.url!.path
+            if path == "/rest/1.0/torrents" { return .init([self.summary()]) }
+            if path.hasSuffix("/info/EXISTING") {
+                var value = self.info()
+                value["files"] = [["id": 7, "path": "/Example.Show.S01E01.mkv", "bytes": 100, "selected": 1],
+                                  ["id": 42, "path": "/Example.Show.S01E02.mkv", "bytes": 200, "selected": 1]]
+                return .init(value)
+            }
+            if path.hasSuffix("unrestrict/link") {
+                XCTAssertEqual(self.form(request)["link"], "https://real-debrid.com/d/file42")
+                counts.increment("unrestrict"); return .init(self.playback)
+            }
+            counts.increment("unexpected"); return .init([:], status: 500)
+        }
+        let source = SourceStream(title: "Example.Show.S01.Complete", providerName: "Red Light · Comet",
+                                  magnetURL: testInfoHash, providerId: "native.redlight", targetSeason: 1, targetEpisode: 2)
+        let playable = try await RedLightNativeProvider().resolve(source: source, using: client())
+        XCTAssertEqual(playable.originalSource?.targetEpisode, 2)
+        XCTAssertEqual(counts.get("unrestrict"), 1); XCTAssertEqual(counts.get("unexpected"), 0)
+    }
+
+    func testNewPackSelectsOnlyTheRequestedEpisodeAndKeepsTheSameTorrent() async throws {
+        let counts = RequestCounts()
+        URLProtocolStub.configure { request in
+            let path = request.url!.path
+            if path == "/rest/1.0/torrents" { return .init([]) }
+            if path.hasSuffix("addMagnet") { counts.increment("add"); return .init(["id": "NEW"], status: 201) }
+            if path.hasSuffix("/info/NEW") {
+                let ready = counts.increment("info") > 1
+                var value = self.info(id: "NEW", status: ready ? "downloaded" : "waiting_files_selection", selected: ready ? [42] : [])
+                value["files"] = [["id": 7, "path": "/Example.Show.S01E01.mkv", "bytes": 100, "selected": 0],
+                                  ["id": 42, "path": "/Example.Show.S01E02.mkv", "bytes": 200, "selected": ready ? 1 : 0]]
+                return .init(value)
+            }
+            if path.hasSuffix("selectFiles/NEW") {
+                counts.increment("select"); XCTAssertEqual(self.form(request)["files"], "42"); return self.emptyReply(status: 204)
+            }
+            XCTAssertTrue(path.hasSuffix("unrestrict/link"))
+            XCTAssertEqual(self.form(request)["link"], "https://real-debrid.com/d/file42"); return .init(self.playback)
+        }
+        _ = try await client().resolveMagnetToStream(magnet: testInfoHash, preferredFileIndex: nil, preferredFileName: nil, season: 1, episode: 2)
+        XCTAssertEqual(counts.get("add"), 1); XCTAssertEqual(counts.get("select"), 1); XCTAssertEqual(counts.get("info"), 2)
+    }
+
 }

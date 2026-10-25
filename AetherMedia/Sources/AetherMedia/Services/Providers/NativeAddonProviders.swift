@@ -7,10 +7,8 @@ import FoundationNetworking
 public struct NativeIndexEndpoints: Sendable {
     public let yts: URL
     public let eztv: URL
-    public let redLight: URL
-    public init(yts: URL = URL(string: "https://yts.mx")!, eztv: URL = URL(string: "https://eztvx.to")!,
-                redLight: URL = URL(string: "https://apibay.org")!) {
-        self.yts = yts; self.eztv = eztv; self.redLight = redLight
+    public init(yts: URL = URL(string: "https://yts.mx")!, eztv: URL = URL(string: "https://eztvx.to")!) {
+        self.yts = yts; self.eztv = eztv
     }
 }
 
@@ -94,37 +92,7 @@ public final class NativeIndexClient: @unchecked Sendable {
         }
         return results
     }
-    public func redLightSources(for item: MediaItem, episode: Episode?) async throws -> [SourceStream] {
-        guard let imdb = imdb(item) else { return [] }
-        if item.type != .movie && episode == nil { throw ProviderServiceError.unavailable("Choose an episode before searching Red Light Native.") }
-        let query = episode.map { "\(imdb) \($0.code)" } ?? imdb
-        var results = try await redLightQuery(query: query, item: item, episode: episode)
-        if results.isEmpty {
-            let titleQuery = [item.title, item.releaseYear.map(String.init), episode?.code].compactMap { $0 }.joined(separator: " ")
-            results = try await redLightQuery(query: titleQuery, item: item, episode: episode)
-        }
-        return results
-    }
-    private static func recordImdb(_ record: [String: Any]) -> String? {
-        for key in ["imdb", "imdb_id"] {
-            let raw = (record[key] as? String) ?? (record[key] as? NSNumber)?.stringValue
-            guard let raw else { continue }
-            let digits = raw.hasPrefix("tt") ? String(raw.dropFirst(2)) : raw
-            if digits.range(of: "^[0-9]+$", options: .regularExpression) != nil,
-               let value = Int64(digits), value > 0 { return "tt" + digits }
-        }
-        return nil
-    }
-    private func redLightQuery(query: String, item: MediaItem, episode: Episode?) async throws -> [SourceStream] {
-        let endpoint = try url("redlight", fallback: endpoints.redLight, path: "q.php", query: [URLQueryItem(name: "q", value: query), URLQueryItem(name: "cat", value: episode == nil ? "207,202,201,211" : "208,205,212")])
-        guard let records = try await get(endpoint) as? [[String: Any]] else { throw ProviderServiceError.unavailable("Red Light Native: unreadable source results.") }
-        return records.compactMap { record in
-            guard (number(record["id"]) ?? 0) > 0, let title = record["name"] as? String,
-                  NativeReleaseMatcher.matches(title, item: item, episode: episode,
-                    sourceImdbId: Self.recordImdb(record)) else { return nil }
-            return source(title: title, hash: record["info_hash"] as? String, size: number(record["size"]), seeds: number(record["seeders"]), providerId: "native.redlight", providerName: "Red Light Native · APIBay")
-        }
-    }
+
 }
 
 /// Conservative matching: no season packs or multi-episode releases without a known file index.
@@ -176,18 +144,6 @@ public struct SerenNativeProvider: MediaProviderProtocol {
     public func fetchCatalog(category: CatalogCategory) async throws -> [MediaItem] { [] }
     public func search(query: String) async throws -> [MediaItem] { [] }
     public func discoverSources(for item: MediaItem, episode: Episode?) async throws -> [SourceStream] { try await client.serenSources(for: item, episode: episode) }
-    public func resolve(source: SourceStream, using debridClient: RealDebridClientProtocol) async throws -> PlayableStream { try await resolveNative(source: source, client: debridClient) }
-}
-public struct RedLightNativeProvider: MediaProviderProtocol {
-    public let id = "native.redlight", displayName = "Red Light Sources (Native)", version = "0.3.0"
-    public let capabilities: ProviderCapabilities = [.sourceDiscovery, .directPlayback]
-    public let isEnabled = true, priority = 97
-    public let supportedTypes: [MediaType] = [.movie, .tvShow, .anime]
-    private let client: NativeIndexClient
-    public init(client: NativeIndexClient = NativeIndexClient()) { self.client = client }
-    public func fetchCatalog(category: CatalogCategory) async throws -> [MediaItem] { [] }
-    public func search(query: String) async throws -> [MediaItem] { [] }
-    public func discoverSources(for item: MediaItem, episode: Episode?) async throws -> [SourceStream] { try await client.redLightSources(for: item, episode: episode) }
     public func resolve(source: SourceStream, using debridClient: RealDebridClientProtocol) async throws -> PlayableStream { try await resolveNative(source: source, client: debridClient) }
 }
 private func resolveNative(source: SourceStream, client: RealDebridClientProtocol) async throws -> PlayableStream {

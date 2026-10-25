@@ -98,6 +98,7 @@ public protocol RealDebridClientProtocol: Sendable {
     /// preferredFileIndex is a zero-based torrent file offset, not a Real-Debrid file ID.
     func resolveMagnetToStream(magnet: String, preferredFileIndex: Int?) async throws -> PlayableStream
     func resolveMagnetToStream(magnet: String, preferredFileIndex: Int?, preferredFileName: String?) async throws -> PlayableStream
+    func resolveMagnetToStream(magnet: String, preferredFileIndex: Int?, preferredFileName: String?, season: Int?, episode: Int?) async throws -> PlayableStream
 }
 
 public extension RealDebridClientProtocol {
@@ -109,6 +110,12 @@ public extension RealDebridClientProtocol {
     /// Compatibility for clients that do not implement filename-aware resolution.
     func resolveMagnetToStream(magnet: String, preferredFileIndex: Int?, preferredFileName: String?) async throws -> PlayableStream {
         try await resolveMagnetToStream(magnet: magnet, preferredFileIndex: preferredFileIndex)
+    }
+    func resolveMagnetToStream(magnet: String, preferredFileIndex: Int?, preferredFileName: String?, season: Int?, episode: Int?) async throws -> PlayableStream {
+        guard season == nil && episode == nil else {
+            throw RealDebridError.debridLinkResolutionFailed("This resolver cannot select an episode from a pack.")
+        }
+        return try await resolveMagnetToStream(magnet: magnet, preferredFileIndex: preferredFileIndex, preferredFileName: preferredFileName)
     }
 }
 
@@ -385,13 +392,17 @@ public final class RealDebridClient: RealDebridClientProtocol, @unchecked Sendab
     }
 
     public func resolveMagnetToStream(magnet: String, preferredFileIndex: Int?, preferredFileName: String?) async throws -> PlayableStream {
+        try await resolveMagnetToStream(magnet: magnet, preferredFileIndex: preferredFileIndex, preferredFileName: preferredFileName, season: nil, episode: nil)
+    }
+
+    public func resolveMagnetToStream(magnet: String, preferredFileIndex: Int?, preferredFileName: String?, season: Int?, episode: Int?) async throws -> PlayableStream {
         guard let hash = SourceStream.extractHash(from: magnet) else {
             throw RealDebridError.magnetAdditionFailed("Enter a valid v1 magnet link or SHA1 info-hash.")
         }
         let generation = locked { authGeneration }
         let existing: RDTorrentInfo?
         do {
-            existing = try await reusableTorrent(hash: hash, fileIndex: preferredFileIndex, fileName: preferredFileName, generation: generation)
+            existing = try await reusableTorrent(hash: hash, fileIndex: preferredFileIndex, fileName: preferredFileName, season: season, episode: episode, generation: generation)
         } catch RealDebridError.responseDecodingFailed(let failure) where failure.operation == .cloudLookup {
             // Cloud reuse is an optimization. A malformed/unrelated cloud entry
             // must not prevent resolving the exact source the user selected.
@@ -404,7 +415,7 @@ public final class RealDebridClient: RealDebridClientProtocol, @unchecked Sendab
         if let existing { torrentId = existing.id }
         else { torrentId = try await addMagnet(magnet) }
         return try await prepareTorrent(id: torrentId, hash: hash, fileIndex: preferredFileIndex,
-                                        fileName: preferredFileName, initialInfo: existing, generation: generation)
+                                        fileName: preferredFileName, season: season, episode: episode, initialInfo: existing, generation: generation)
     }
 
     private func requireAccount(_ generation: Int) throws {
@@ -412,7 +423,7 @@ public final class RealDebridClient: RealDebridClientProtocol, @unchecked Sendab
         guard locked({ authGeneration == generation }) else { throw CancellationError() }
     }
 
-    private func reusableTorrent(hash: String, fileIndex: Int?, fileName: String?, generation: Int) async throws -> RDTorrentInfo? {
+    private func reusableTorrent(hash: String, fileIndex: Int?, fileName: String?, season: Int?, episode: Int?, generation: Int) async throws -> RDTorrentInfo? {
         var pending: RDTorrentInfo?
         let pageSize = 100
         // Match by the actual v1 hash, never by movie/episode display titles.
@@ -436,7 +447,7 @@ public final class RealDebridClient: RealDebridClientProtocol, @unchecked Sendab
                 guard SourceStream.extractHash(from: info.hash) == hash else { continue }
                 if ["error", "dead", "virus", "magnet_error"].contains(info.status) { continue }
                 if info.files.isEmpty { pending = pending ?? info; continue }
-                let file = try info.requestedVideo(fileIndex: fileIndex, fileName: fileName)
+                let file = try info.requestedVideo(fileIndex: fileIndex, fileName: fileName, season: season, episode: episode)
                 if info.isReadyToStream && file.isSelected {
                     _ = try info.link(forFileId: file.id)
                     return info
@@ -452,7 +463,7 @@ public final class RealDebridClient: RealDebridClientProtocol, @unchecked Sendab
         return pending
     }
 
-    private func prepareTorrent(id torrentId: String, hash: String, fileIndex: Int?, fileName: String?,
+    private func prepareTorrent(id torrentId: String, hash: String, fileIndex: Int?, fileName: String?, season: Int?, episode: Int?,
                                 initialInfo: RDTorrentInfo?, generation: Int) async throws -> PlayableStream {
         var initialInfo = initialInfo
         var firstNewInspection = initialInfo == nil
@@ -473,7 +484,7 @@ public final class RealDebridClient: RealDebridClientProtocol, @unchecked Sendab
                 throw RealDebridError.debridLinkResolutionFailed("Torrent preparation failed (\(info.status)).")
             }
             if !info.files.isEmpty {
-                let file = try info.requestedVideo(fileIndex: fileIndex, fileName: fileName)
+                let file = try info.requestedVideo(fileIndex: fileIndex, fileName: fileName, season: season, episode: episode)
                 if info.isAwaitingFileSelection {
                     let selected = info.files.filter(\.isSelected)
                     guard selected.isEmpty || file.isSelected else {

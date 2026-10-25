@@ -112,11 +112,21 @@ public struct RDTorrentInfo: Codable, Sendable {
 
     /// Filename hints identify the actual requested video even if a provider's
     /// file index differs from the order returned by the cloud API.
-    public func requestedVideo(fileIndex: Int?, fileName: String?) throws -> RDTorrentFile {
+    public func requestedVideo(fileIndex: Int?, fileName: String?, season: Int? = nil, episode: Int? = nil) throws -> RDTorrentFile {
         func normalize(_ value: String) -> String {
             value.replacingOccurrences(of: "\\", with: "/").trimmingCharacters(in: CharacterSet(charactersIn: "/")).lowercased()
         }
         let videos = files.filter(\.isVideo)
+        func verifyEpisode(_ file: RDTorrentFile) throws -> RDTorrentFile {
+            if let season, let episode {
+                let target = Episode(id: "selection", seasonNumber: season, episodeNumber: episode, title: "")
+                if file.path.range(of: "(?i)s[0-9]{1,2}e[0-9]{1,3}|[0-9]{1,2}x[0-9]{1,3}", options: .regularExpression) != nil,
+                   !NativeReleaseMatcher.hasExactEpisode(file.path, episode: target) {
+                    throw RealDebridError.debridLinkResolutionFailed("The source file hint points to a different episode. Choose the exact file in Debrid Cloud.")
+                }
+            }
+            return file
+        }
         if let fileName, !fileName.isEmpty {
             let hint = normalize(fileName)
             let exact = videos.filter { normalize($0.path) == hint }
@@ -124,13 +134,24 @@ public struct RDTorrentInfo: Codable, Sendable {
             guard matches.count == 1, let file = matches.first else {
                 throw RealDebridError.debridLinkResolutionFailed("The source filename does not uniquely match a video in this torrent. Choose the exact file in Debrid Cloud.")
             }
-            return file
+            return try verifyEpisode(file)
         }
         if let index = fileIndex {
             guard files.indices.contains(index), files[index].isVideo else {
                 throw RealDebridError.debridLinkResolutionFailed("The source file index does not match a video in this torrent.")
             }
-            return files[index]
+            return try verifyEpisode(files[index])
+        }
+        if let season, let episode {
+            let target = Episode(id: "selection", seasonNumber: season, episodeNumber: episode, title: "")
+            let candidates = videos.filter {
+                NativeReleaseMatcher.hasExactEpisode($0.path, episode: target)
+                    && $0.path.range(of: "(?i)(?:^|[/ ._-])(?:sample|trailer|extras?)(?:[/ ._-]|$)", options: .regularExpression) == nil
+            }
+            guard candidates.count == 1, let file = candidates.first else {
+                throw RealDebridError.debridLinkResolutionFailed("The requested episode does not uniquely match a video in this pack. Choose the exact file in Debrid Cloud.")
+            }
+            return file
         }
         guard videos.count == 1, let file = videos.first else {
             throw RealDebridError.debridLinkResolutionFailed("This torrent has no single unambiguous video. Choose the exact file in Debrid Cloud.")

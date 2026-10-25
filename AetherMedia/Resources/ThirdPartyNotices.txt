@@ -7,7 +7,7 @@ Pinned official binary: VLCKit-4.0-20260929-1631.zip
 SHA256: f37c8dbdd4427d1a3f5d75dc4b8bd1ae863cef4426f9a405a2fd1c5c9012f1fb
 Source downloads/build scripts for VLC and its bundled dependencies are provided by VideoLAN at https://www.videolan.org/vlc/download-sources.html and the source/build repository above. The dynamic VLCKit framework can be replaced and the app re-signed/rebuilt from the supplied app source. No VLCKit code was modified.
 
-Native source adapters independently implement HTTP index protocols; they do not embed or execute Seren, Red Light or a4kScrapers Python code. Protocol references: https://github.com/a4k-openproject/a4kScrapers and https://github.com/The-Red-Wiz/TheRedWizard . Original project names identify the workflow inspiration, not an endorsement or binary add-on compatibility claim.
+Native source adapters independently implement HTTP protocols; no Seren, Red Light, Coco/Gears or a4kScrapers Python code is bundled or executed. Red Light source protocol reference: official plugin.video.redlight 2.9.1 from https://repo.redwizard.xyz/ (official project https://github.com/The-Red-Wiz/TheRedWizard). See docs/SOURCE_COVERAGE.md for module references, package identity and compatibility boundaries. Source-service compatibility does not imply Kodi ZIP/runtime compatibility or endorsement. Seren remains a separate YTS/EZTV adapter.
 
                   GNU LESSER GENERAL PUBLIC LICENSE
                        Version 2.1, February 1999
