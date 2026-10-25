@@ -388,8 +388,8 @@
     },
     {
       "path": "AetherMedia/Tests/AetherMediaTests/RedLightProviderTests.swift",
-      "bytes": 16209,
-      "sha256": "82059d64e1f444cac649f2c04bdf29714d7a14da85677f6b1a83cef5aecb40be"
+      "bytes": 16328,
+      "sha256": "ab1867ffb395f12e19e1879d8383bc2da8bf08919d19af43109957baf322c34d"
     },
     {
       "path": "AetherMedia/Tests/AetherMediaTests/RedLightPublicSourceTests.swift",

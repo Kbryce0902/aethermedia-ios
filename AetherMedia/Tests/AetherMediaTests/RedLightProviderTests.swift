@@ -6,7 +6,7 @@ import FoundationNetworking
 @testable import AetherMedia
 
 final class RedLightProviderTests: XCTestCase {
-    private let hash = String(repeating: "A", count: 40)
+    private let fixtureHash = String(repeating: "A", count: 40)
     private let otherHash = String(repeating: "B", count: 40)
     private var movie: MediaItem { MediaItem(id: "tt1234567", title: "Example Film", releaseYear: 2020, imdbId: "tt1234567") }
     private var show: MediaItem { MediaItem(id: "tt1234567", title: "Example Show", releaseYear: 2020, type: .tvShow, imdbId: "tt1234567") }
@@ -28,23 +28,23 @@ final class RedLightProviderTests: XCTestCase {
             if host == "apibay.org" {
                 XCTAssertEqual(path, "/q.php"); XCTAssertEqual(self.queries(request)["q"], "Example Film 2020")
                 XCTAssertEqual(self.queries(request)["cat"], "0")
-                return .init([["id": "1", "name": "Example.Film.2020.1080p", "info_hash": self.hash, "seeders": "5", "size": "1234"]])
+                return .init([["id": "1", "name": "Example.Film.2020.1080p", "info_hash": self.fixtureHash, "seeders": "5", "size": "1234"]])
             }
             if host == "zilean.stremio.ru" {
                 XCTAssertEqual(path, "/dmm/filtered"); XCTAssertEqual(self.queries(request)["ImdbId"], "tt1234567")
-                return .init(["results": [["raw_title": "Example.Film.2020.1080p", "info_hash": self.hash, "size": 4567]]])
+                return .init(["results": [["raw_title": "Example.Film.2020.1080p", "info_hash": self.fixtureHash, "size": 4567]]])
             }
             if host == "stremthru.stremio.ru" {
                 XCTAssertEqual(path, "/v0/torrents"); XCTAssertEqual(self.queries(request)["sid"], "tt1234567")
-                return .init(["data": ["items": [["name": "Example.Film.2020.1080p", "hash": self.hash, "seeders": 6]]]])
+                return .init(["data": ["items": [["name": "Example.Film.2020.1080p", "hash": self.fixtureHash, "seeders": 6]]]])
             }
             if host == "www.torrentdownloads.pro" {
                 XCTAssertEqual(path, "/rss.xml"); XCTAssertEqual(self.queries(request)["cid"], "4")
-                var reply = URLProtocolStub.Reply([:]); reply.body = Data("<rss><channel><item><title><![CDATA[Example.Film.2020.1080p]]></title><size>1234</size><seeders>7</seeders><info_hash>\(self.hash)</info_hash></item></channel></rss>".utf8)
+                var reply = URLProtocolStub.Reply([:]); reply.body = Data("<rss><channel><item><title><![CDATA[Example.Film.2020.1080p]]></title><size>1234</size><seeders>7</seeders><info_hash>\(self.fixtureHash)</info_hash></item></channel></rss>".utf8)
                 return reply
             }
             XCTAssertEqual(path, "/stream/movie/tt1234567.json")
-            return .init(["streams": [["description": "📄 Example.Film.2020.1080p.mkv\n📹 h264\n👤 8 💾 1.5 GB", "infoHash": self.hash, "fileIdx": 2]]])
+            return .init(["streams": [["description": "📄 Example.Film.2020.1080p.mkv\n📹 h264\n👤 8 💾 1.5 GB", "infoHash": self.fixtureHash, "fileIdx": 2]]])
         }
         let result = try await client([.comet, .mediafusion, .zilean, .torz, .torrentio, .piratebay, .torrentdownloads]).discover(for: movie, episode: nil)
         XCTAssertEqual(result.reports.count, 7); XCTAssertEqual(result.sources.count, 7); XCTAssertTrue(result.warnings.isEmpty)
@@ -58,7 +58,7 @@ final class RedLightProviderTests: XCTestCase {
         URLProtocolStub.configure { request in
             XCTAssertEqual(request.url!.path, "/stream/series/tt1234567:1:2.json")
             return .init(["streams": [
-                ["infoHash": self.hash, "fileIdx": 3, "behaviorHints": ["filename": "Example.Show.S01E02.1080p.mkv", "videoSize": 4000]],
+                ["infoHash": self.fixtureHash, "fileIdx": 3, "behaviorHints": ["filename": "Example.Show.S01E02.1080p.mkv", "videoSize": 4000]],
                 ["infoHash": self.otherHash, "description": "Example.Show.S01.Complete.1080p"],
                 ["infoHash": String(repeating: "C", count: 40), "description": "Example.Show.S01E03.1080p"],
                 ["infoHash": String(repeating: "D", count: 40), "description": "Example.Show.1990.S01E02.1080p"]
@@ -69,7 +69,7 @@ final class RedLightProviderTests: XCTestCase {
         let pack = result.sources.first { $0.infoHash == otherHash }!
         XCTAssertNil(pack.fileIndex); XCTAssertNil(pack.originalFileName)
         XCTAssertEqual(pack.targetSeason, 1); XCTAssertEqual(pack.targetEpisode, 2)
-        XCTAssertEqual(result.sources.first { $0.infoHash == hash }?.fileIndex, 3)
+        XCTAssertEqual(result.sources.first { $0.infoHash == fixtureHash }?.fileIndex, 3)
         let withoutPacks = try await client([.comet], packs: false).discover(for: show, episode: episode)
         XCTAssertEqual(withoutPacks.sources.count, 1)
     }
@@ -80,7 +80,7 @@ final class RedLightProviderTests: XCTestCase {
             calls.increment(q)
             XCTAssertFalse(q.contains("tt1234567"))
             return .init([
-                ["id": "1", "name": "Example.Show.2020.S01E02.1080p", "info_hash": self.hash],
+                ["id": "1", "name": "Example.Show.2020.S01E02.1080p", "info_hash": self.fixtureHash],
                 ["id": "2", "name": "Example.Show.S01E02.1080p", "info_hash": self.otherHash],
                 ["id": "3", "name": "Example.Show.1990.S01E02.1080p", "info_hash": self.otherHash],
                 ["id": "4", "name": "Example.Show.S01E02.1080p", "info_hash": String(repeating: "C", count: 40), "imdb": "tt1234567"]
@@ -93,7 +93,7 @@ final class RedLightProviderTests: XCTestCase {
     func testOneFailedServiceKeepsOtherResultsAndSanitizedDiagnostics() async throws {
         URLProtocolStub.configure { request in
             if request.url!.host == "comet.feels.legal" { return .init(["error": "private response must not be echoed"], status: 503) }
-            return .init(["data": ["items": [["name": "Example.Film.2020.1080p", "hash": self.hash]]]])
+            return .init(["data": ["items": [["name": "Example.Film.2020.1080p", "hash": self.fixtureHash]]]])
         }
         let result = try await client([.comet, .torz]).discover(for: movie, episode: nil)
         XCTAssertEqual(result.sources.count, 1); XCTAssertEqual(result.warnings.count, 1)
@@ -112,7 +112,7 @@ final class RedLightProviderTests: XCTestCase {
         URLProtocolStub.configure { request in
             if request.url!.host == "feed.animetosho.org" {
                 XCTAssertEqual(request.url!.path, "/json")
-                return .init([["title": "[Group] Example Show 2020 S01E02 1080p", "info_hash": self.hash, "total_size": 1234]])
+                return .init([["title": "[Group] Example Show 2020 S01E02 1080p", "info_hash": self.fixtureHash, "total_size": 1234]])
             }
             XCTAssertEqual(self.queries(request)["page"], "rss")
             var reply = URLProtocolStub.Reply([:]); reply.body = Data("<rss xmlns:nyaa='https://nyaa.si/xmlns/nyaa'><channel><item><title>[Group] Example Show 2020 S01E02 1080p</title><nyaa:infoHash>\(self.otherHash)</nyaa:infoHash><nyaa:size>1.5 GiB</nyaa:size><nyaa:seeders>8</nyaa:seeders></item></channel></rss>".utf8); return reply
@@ -170,9 +170,9 @@ final class RedLightProviderTests: XCTestCase {
         URLProtocolStub.configure { _ in .init(["streams": [
             ["infoHash": "bad", "title": "Example.Film.2020.1080p"],
             ["infoHash": String(repeating: "0", count: 40), "title": "Example.Film.2020.1080p"],
-            ["infoHash": self.hash, "title": "Example.Film.1990.1080p"],
-            ["infoHash": self.hash, "title": "Different.Film.2020.1080p"],
-            ["infoHash": self.hash, "title": "Example.Film.2020.sample.1080p"]
+            ["infoHash": self.fixtureHash, "title": "Example.Film.1990.1080p"],
+            ["infoHash": self.fixtureHash, "title": "Different.Film.2020.1080p"],
+            ["infoHash": self.fixtureHash, "title": "Example.Film.2020.sample.1080p"]
         ]]) }
         let result = try await client([.comet]).discover(for: movie, episode: nil)
         XCTAssertTrue(result.sources.isEmpty); XCTAssertEqual(result.reports.first?.status, "responded")
@@ -182,7 +182,7 @@ final class RedLightProviderTests: XCTestCase {
                      RDTorrentFile(id: 42, path: "/Example.Show.S01E02.mkv", bytes: 200, selected: 1),
                      RDTorrentFile(id: 99, path: "/Sample/Example.Show.S01E02.mkv", bytes: 1, selected: 0)]
         func info(_ files: [RDTorrentFile]) -> RDTorrentInfo {
-            RDTorrentInfo(id: "pack", filename: "Example.Show.S01", originalFilename: nil, hash: hash, bytes: 301, host: "", progress: 100, status: "downloaded", added: "", files: files, links: ["first", "second"], ended: nil, speed: nil, seeders: nil)
+            RDTorrentInfo(id: "pack", filename: "Example.Show.S01", originalFilename: nil, hash: fixtureHash, bytes: 301, host: "", progress: 100, status: "downloaded", added: "", files: files, links: ["first", "second"], ended: nil, speed: nil, seeders: nil)
         }
         let selected = try info(files).requestedVideo(fileIndex: nil, fileName: nil, season: 1, episode: 2)
         XCTAssertEqual(selected.id, 42); XCTAssertEqual(try info(files).link(forFileId: selected.id), "second")
@@ -191,7 +191,7 @@ final class RedLightProviderTests: XCTestCase {
         XCTAssertThrowsError(try info(files + [RDTorrentFile(id: 100, path: "/alt/Example.Show.S01E02.mkv", bytes: 200, selected: 0)]).requestedVideo(fileIndex: nil, fileName: nil, season: 1, episode: 2))
     }
     func testSourceResultsKeepBackendDetailsThroughProviderManager() async throws {
-        URLProtocolStub.configure { _ in .init(["streams": [["title": "Example.Film.2020.1080p", "infoHash": self.hash]]]) }
+        URLProtocolStub.configure { _ in .init(["streams": [["title": "Example.Film.2020.1080p", "infoHash": self.fixtureHash]]]) }
         let provider = RedLightNativeProvider(client: client([.comet]))
         let manager = ProviderManager(providers: [provider], preferences: nil)
         let result = try await manager.discoverSourceResult(for: movie, episode: nil)
@@ -208,7 +208,7 @@ final class RedLightProviderTests: XCTestCase {
     func testFailedSeasonQueryRetainsExactEpisodeResults() async throws {
         URLProtocolStub.configure { request in
             if self.queries(request)["q"] == "Example Show S01" { return .init([:], status: 503) }
-            return .init([["id": "1", "name": "Example.Show.2020.S01E02.1080p", "info_hash": self.hash]])
+            return .init([["id": "1", "name": "Example.Show.2020.S01E02.1080p", "info_hash": self.fixtureHash]])
         }
         let result = try await client([.piratebay]).discover(for: show, episode: episode)
         XCTAssertEqual(result.sources.count, 1); XCTAssertEqual(result.reports.first?.status, "partial")
