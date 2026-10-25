@@ -6,7 +6,9 @@ Version 0.3.5 (8), October 25, 2026. Prepared from the existing app snapshot wit
 
 The owner authorized publishing only AetherMedia in a separate public repository. The owner created `Kbryce0902/aethermedia-ios`, default branch `main`. Its public visibility and write access have been verified. App, resources, tests, fixtures, build scripts and reviewed workflows are included. Other projects, old repository history, historical reports, local data and private logs are excluded.
 
-Repository creation is complete. Uploading the reviewed app-only snapshot is the current step. Only the new repository's initial README commit will be used as a parent; no commits from the previous repository are transferred. Compilation and live testing remain pending actual workflow results.
+Publication is complete. Source commit `7eaffd7c30fc52ed070b2b35da508440c494aee1` contains87 reviewed app-only files and has only the new repository's initial README commit as its parent. Public source/test blob hashes and paths were verified. No private ancestor commits or other project files were transferred.
+
+The public Mac build started successfully: https://github.com/Kbryce0902/aethermedia-ios/actions/runs/40234556260, job121293224954. Credential checks,82 packaging checks and portable core tests have passed; iOS simulator tests and device archiving are in progress. Exact test counts and the compiled IPA remain pending completed logs. The previous private-repository launch restriction did not block this public standard runner. The live workflow has not been triggered, and no new Real-Debrid code exists yet.
 
 ## 0.3.5 behavior and validation
 
